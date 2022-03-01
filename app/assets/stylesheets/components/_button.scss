@@ -1,0 +1,29 @@
+.btn-primary {
+  background-color: $blue;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 6px;
+  box-shadow: 0 3px $dark-blue;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  &:hover {
+    background-color: $dark-blue;
+    color: white;
+  }
+}
+
+.btn-secundary {
+  background-color: $green;
+  color: rgb(255, 255, 255);
+  padding: 6px 14px;
+  border-radius: 6px;
+  box-shadow: 0 3px #729c93;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  &:hover {
+    background-color: #729c93;
+    color: white;
+  }
+}

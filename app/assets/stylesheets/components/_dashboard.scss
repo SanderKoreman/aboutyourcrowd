@@ -1,0 +1,52 @@
+.dashboard {
+  background: #ffffff;
+  box-shadow:  20px 20px 60px #d9d9d9,
+             -20px -20px 60px #ffffff;
+  border-radius: $border-radius-dashboard;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.col-9 {
+  padding: 18px;
+  border-left: 1px solid $lighter-gray;
+  background-color: rgb(252, 252, 252);
+}
+
+.col-3 {
+  padding: 18px;
+  display: flex;
+  flex-direction: column
+}
+
+.hashtag {
+  color: $light-gray;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  &:hover {
+    color: $black;
+  }
+}
+
+.username {
+  padding-bottom: 16px;
+  border-bottom: 1px solid $lighter-gray;
+}
+
+a {
+  color: $light-gray;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 6px;
+  &:hover {
+    padding-left: 3px;
+    border-left: 3px solid black;
+    color: $black;
+  }
+}
+
+.saved {
+  padding-top: 16px;
+  border-top: 1px solid $lighter-gray;
+}
