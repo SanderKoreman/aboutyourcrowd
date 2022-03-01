@@ -50,4 +50,4 @@ class ApplicationController < ActionController::Base
 
 end
 
-p retrieve_score([ "rape", "terrorist", "hitler"])
+# p retrieve_score([ "rape", "terrorist", "hitler"])
