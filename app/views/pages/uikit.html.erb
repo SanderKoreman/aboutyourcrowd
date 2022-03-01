@@ -1,4 +1,49 @@
-<div class="container uikit">
+<div class="container uikit text-center">
   <h1>UI Kit</h1>
+  ---------------
+  <h2>Logo</h2>
+  <%= image_tag "logo-green.png", class: "logo" %>
+  <br>
+  ---------------
+  <h2 mt-6>Colors</h2>
+  <div class="colors center">
+    <div class="color-1"></div>
+    <div class="color-2"></div>
+    <div class="color-3"></div>
+    <div class="color-4"></div>
+    <div class="color-5"></div>
+    <div class="color-6"></div>
+  </div>
+  ---------------
+  <h2>Headers</h2>
+  <h3>This is a h3</h3>
+  <h4>This is a h4</h4>
+  ---------------
+  <h2>Buttons</h2>
+    <a class="btn-primary" href="#">primary</a>
+    <a class="btn-secundary" href="#">secundary</a>
+</div>
 
+<h1 class="center">Dashboard</h1>
+
+<div class="container dashboard mt-2">
+  <div class="row">
+    <div class="col-3">
+      <%= image_tag "logo-green.png", class: "logo" %>
+      <h4 class="mt-4 username">Welcome, Sander!</h4>
+        <a class="navbar" href="#">Dashboard</a>
+        <a class="navbar" href="#">Trending hashtags</a>
+      <h6 class="saved">Saved hashtags</h6>
+        <a class="hashtag" href="">#Tesla</a>
+        <a class="hashtag" href="">#Amazon</a>
+        <a class="hashtag" href="">#LeWagon</a>
+        <a class="hashtag" href="">#GitHub</a>
+        <a class="hashtag" href="">#NYTimes</a>
+      </ul>
+      <a class="btn-secundary mt-2" href="#">log out</a>
+    </div>
+    <div class="col-9">
+    text
+    </div>
+  </div>
 </div>
