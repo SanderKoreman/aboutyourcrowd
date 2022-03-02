@@ -48,7 +48,7 @@ class DashboardsController < ApplicationController
   end
 
   def retrieve_score(words)
-    csv = "./lib/assets/hedonometer.csv"
+    csv = "/lib/assets/Hedonometer.csv"
 
     # response = File.open(csv)
     scores = []
