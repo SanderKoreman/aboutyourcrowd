@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   TEXTS = []
   def call_twitter(query)
-    
+
     #endpoint fetch tweets
 
     url = "https://api.twitter.com/2/tweets/search/recent?&query=#{query}&max_results=10&tweet.fields=lang"
@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
   end
 
   def split_texts(tweets)
-    content =[]
+    content = []
     tweets.each do |tweet|
       #array of strings
       tweet.split(" ").flatten!
@@ -50,4 +50,5 @@ class ApplicationController < ActionController::Base
     return sum.round(1)
   end
 
+  # p retrieve_score("happiness", "love", "terrorist")
 end
