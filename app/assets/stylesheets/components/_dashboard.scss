@@ -9,12 +9,9 @@
 }
 
 .landing {
-  background: #ffffff;
-  background-image: url("landing-bg.jpg");
-  background-size: cover;
-  box-shadow:  20px 20px 60px #d9d9d9,
-             -20px -20px 60px #ffffff;
-  border-radius: $border-radius-dashboard;
+  background-image: url("landing.png");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
   height: 85vh;
 }
 
@@ -59,4 +56,18 @@ a {
 .saved {
   padding-top: 16px;
   // border-top: 1px solid $lighter-gray;
+}
+
+.landing {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.landing-text {
+  text-align: right;
+}
+
+.header-landing {
+  font-size: 56px;
 }
