@@ -7,9 +7,9 @@ class ApplicationController < ActionController::Base
 
   TEXTS = []
   def call_twitter(query)
-    #endpont fetch twits
+    #endpont fetch tweets
     url = "https://api.twitter.com/2/tweets/search/recent?&query=#{query}&max_results=10&tweet.fields=lang"
-    puts url
+
     # get request
     response = URI.open(url,
       "Authorization" => "Bearer AAAAAAAAAAAAAAAAAAAAAMjvZgEAAAAAzaTwcexM%2FozUoUW4TZjTDl30cpU%3D7oZ6mAazRU6drDRdUPTLllgfeXxKwl9OXwXjWHdyRuxgK23idR").read
@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
 
   def split_texts(tweets)
     content =[]
-    content = tweets.each do |tweet|
+    tweets.each do |tweet|
       #array of strings
       tweet.split(" ").flatten!
       end
@@ -50,4 +50,4 @@ class ApplicationController < ActionController::Base
 
 end
 
-p retrieve_score([ "rape", "terrorist", "hitler"])
+# p call_twitter("daugavpils")

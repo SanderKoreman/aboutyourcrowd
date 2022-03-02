@@ -9,22 +9,23 @@
 #     # get request
 #     response = URI.open(url,
 #       "Authorization" => "Bearer AAAAAAAAAAAAAAAAAAAAAMjvZgEAAAAAzaTwcexM%2FozUoUW4TZjTDl30cpU%3D7oZ6mAazRU6drDRdUPTLllgfeXxKwl9OXwXjWHdyRuxgK23idR").read
+#     # change format, then get specific JSON property
 #     tweets = JSON.parse(response)["data"]
 #     texts =[]
-#     tweets.each do |hash|
-#       texts << hash["text"] if hash["lang"] == "en"
+#     tweets.each do |tweet|
+#       texts << tweet["text"] if tweet["lang"] == "en"
 #       end
 #       # array of strings = twits
-#     return tweets
+#     return texts
 #   end
 
 #   def split_texts(tweets)
 #     content =[]
-#     content = tweets.each do |tweet|
+#     tweets.each do |tweet|
 #       #array of strings
-#       tweet.split(" ").flatten!
+#       content << tweet.split(" ")
 #       end
-#     return content
+#     return content.flatten
 #   end
 
 #   def retrieve_score(words)
@@ -44,4 +45,5 @@
 #     return sum.round(1)
 #   end
 
-# p retrieve_score([ "rape", "terrorist", "hitler"])
+# # p retrieve_score(split_texts(call_twitter("christmas")))
+# # p call_twitter("christmas")
