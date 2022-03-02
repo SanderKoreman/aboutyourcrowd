@@ -7,18 +7,20 @@ class ApplicationController < ActionController::Base
 
   TEXTS = []
   def call_twitter(query)
-    #endpont fetch tweets
+    
+    #endpoint fetch tweets
+
     url = "https://api.twitter.com/2/tweets/search/recent?&query=#{query}&max_results=10&tweet.fields=lang"
 
     # get request
     response = URI.open(url,
       "Authorization" => "Bearer AAAAAAAAAAAAAAAAAAAAAMjvZgEAAAAAzaTwcexM%2FozUoUW4TZjTDl30cpU%3D7oZ6mAazRU6drDRdUPTLllgfeXxKwl9OXwXjWHdyRuxgK23idR").read
     tweets = JSON.parse(response)["data"]
-    texts =[]
+    texts = []
     tweets.each do |hash|
       texts << hash["text"] if hash["lang"] == "en"
-      end
-      # array of strings = twits
+    end
+    # array of strings = tweets
     return tweets
   end
 
@@ -27,7 +29,7 @@ class ApplicationController < ActionController::Base
     tweets.each do |tweet|
       #array of strings
       tweet.split(" ").flatten!
-      end
+    end
     return content
   end
 
@@ -35,7 +37,7 @@ class ApplicationController < ActionController::Base
     csv = "lib/assets/hedonometer.csv"
 
     # response = File.open(csv)
-    scores =[]
+    scores = []
     words.each {|word| CSV.foreach(csv, headers: :first_row) do |row|
       scores << row["Happiness Score"].to_i if row["Word"] == word
     end
@@ -49,5 +51,3 @@ class ApplicationController < ActionController::Base
   end
 
 end
-
-# p call_twitter("daugavpils")
