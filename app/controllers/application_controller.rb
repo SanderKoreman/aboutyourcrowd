@@ -5,6 +5,7 @@ require "csv"
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
+
   # TEXTS = []
   # def call_twitter(query)
 
@@ -50,4 +51,5 @@ class ApplicationController < ActionController::Base
   #   return sum.round(1)
   # end
 
+  # p retrieve_score("happiness", "love", "terrorist")
 end
