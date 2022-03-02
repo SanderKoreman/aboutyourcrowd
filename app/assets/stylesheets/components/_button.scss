@@ -8,7 +8,7 @@
   font-size: 14px;
   text-decoration: none;
   &:hover {
-    background-color: $dark-blue;
+    box-shadow: 3px $dark-blue;
     color: white;
   }
 }
