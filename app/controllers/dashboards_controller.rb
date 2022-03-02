@@ -53,7 +53,7 @@ class DashboardsController < ApplicationController
     # response = File.open(csv)
     scores = []
     words.each {|word|
-      CSV.new(open(csv), headers: :first_row).each do |row|
+      CSV.new(open(csv), :headers => :first_row).each do |row|
       scores << row["Happiness Score"].to_i if row["Word"] == word
     end
     }
