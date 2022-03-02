@@ -3,7 +3,7 @@
     <div class="col-3 d-flex column justify-content-between">
       <div>
         <%= image_tag "logo-green.png", class: "logo" %>
-        <h6 class="mt-4 username">Sander Koreman</h4>
+        <h6 class="mt-4 username"><%= @user.email  %></h4>
 
 <!------------------------------My hashtags card---------------------------->
 
@@ -14,17 +14,24 @@
 
 <!------------------------------DASHBOARD RIGHT---------------------------->
     <div class="col-9">
-      <h4>Welcome back, <%= @user.email  %>!</h4>
-      <%= render "dashboards/search_hashtag" %>
-      <% if @hashtag.present? %>
-        <%= link_to "Save hashtag to favourites", hashtags_path(hashtag: @hashtag, score: @score), method: :post  %>
-      <% end %>
-      <% if @score %>
-        <p>Happiness score is:</p>
-        <h1><%= @score %></h1>
-      <% end %>
 
-      <p>These are your last searched hashtags</p>
+          <h4>Welcome back, <%= @user.email  %>!</h4>
+          <%= render "dashboards/search_hashtag" %>
+    <!--------------Happiness score---------------------------->
+            <% if @score %>
+            <p>Happiness score is:</p>
+            <h1><%= @score %></h1>
+            <%= render "happiness_chart" %>
+          <% end %>
+
+    <!--------------Save bookmark---------------------------->
+          <% if @hashtag.present? %>
+            <%= link_to "Bookmark #{params[:hashtag]}", hashtags_path(hashtag: @hashtag, score: @score), method: :post  %>
+          <% end %>
+
+
+        <p class = "mt-5">These are your last searched hashtags: </p>
+
     </div>
   </div>
 </div>

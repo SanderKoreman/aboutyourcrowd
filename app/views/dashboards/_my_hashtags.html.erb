@@ -1,13 +1,17 @@
-<h6 class="saved">My hashtags</h6>
+<h5 class="saved">My hashtags</h5>
 
       <% if @my_hashtags.present?%>
-        <h5 class="fw-bold">My hashtags </h5>
-          <% @my_hashtags.each do |hashtag| %>
-            <%= hashtag.hashtag%>
-            <i class="fas fa-trash"></i>
-          <% end %>
-      <% else %>
-        <div class="hashtag-alert" role="alert">
-          No saved hastags.
-        </div>
+          <ul>
+            <% @my_hashtags.each do |hashtag| %>
+              <li><%= hashtag.hashtag%>
+                <a data-confirm="Are you sure?" data-method="delete" href="hashtags/<%= hashtag.id %>">
+                  <i class="fas fa-trash"></i>
+                </a>
+              </li>
+            <% end %>
+        <% else %>
+          <div class="hashtag-alert" role="alert">
+            No saved hastags.
+          </div>
+          </ul>
       <% end %>
