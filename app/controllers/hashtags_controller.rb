@@ -1,22 +1,17 @@
 class HashtagsController < ApplicationController
   def index
-
   end
 
   def show
     @hashtag = Hahstag.find([params[:id]])
-    @bookmark = Bookmark.new
   end
 
-  def new
-    @hashtag = Hashtag.new
-  end
 
   def create
-    @hashtag = Hashtag.new(hashtag_params)
+    @hashtag = Hashtag.new(hashtag: params[:hashtag], score: params[:score])
     @hashtag.user = current_user
     if @hashtag.save
-      redirect_to hashtag_path(@hashtag), notice: 'Hashtag was successfully created.'
+      redirect_to my_dashboard_path#hashtag_path(@hashtag), notice: 'Hashtag was successfully created.'
     else
       render :new
     end

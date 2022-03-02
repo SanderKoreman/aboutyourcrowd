@@ -7,31 +7,31 @@ class DashboardsController < ApplicationController
     @user = current_user
     @my_hashtags = @user.hashtags
 
+    # call functions
     if params[:hashtag]
-
-      #call functions
       tweets = call_twitter(params[:hashtag])
       @score = retrieve_score(split_texts(tweets))
-
+      @hashtag = params[:hashtag]
     end
 
   end
-
 
   private
 
   TEXTS = []
   def call_twitter(query)
+
     #endpoint fetch tweets
-    url = "https://api.twitter.com/2/tweets/search/recent?&query=#{query}&max_results=10&tweet.fields=lang"
+
+    url = "https://api.twitter.com/2/tweets/search/recent?&query=#{query}%20-is%3Aretweet%20%20lang%3Aen&max_results=10"
 
     # get request
     response = URI.open(url,
       "Authorization" => "Bearer AAAAAAAAAAAAAAAAAAAAAMjvZgEAAAAAzaTwcexM%2FozUoUW4TZjTDl30cpU%3D7oZ6mAazRU6drDRdUPTLllgfeXxKwl9OXwXjWHdyRuxgK23idR").read
-    tweets = JSON.parse(response)["data"]
+      tweets = JSON.parse(response)["data"]
     texts = []
     tweets.each do |hash|
-      texts << hash["text"] if hash["lang"] == "en"
+      texts << hash["text"]
     end
     # array of strings = tweets
     return texts

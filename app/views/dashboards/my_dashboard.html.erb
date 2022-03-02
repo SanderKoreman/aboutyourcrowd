@@ -1,22 +1,30 @@
 <div class="container dashboard">
   <div class="row">
-    <div class="col-3">
-      <%= image_tag "logo-green.png", class: "logo" %>
-      <h6 class="mt-4 username">Sander Koreman</h4>
+    <div class="col-3 d-flex column justify-content-between">
+      <div>
+        <%= image_tag "logo-green.png", class: "logo" %>
+        <h6 class="mt-4 username">Sander Koreman</h4>
 
-      <%= render "dashboards/my_hashtags" %>
+<!------------------------------My hashtags card---------------------------->
 
+        <%= render "dashboards/my_hashtags" %>
+      </div>
       <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
     </div>
-    <div class="col-9">
-      <h4>Welcome back, Sander!</h4>
-      <p>These are your last searched hashtags</p>
-      <%= render "dashboards/search_hashtag" %>
 
+<!------------------------------DASHBOARD RIGHT---------------------------->
+    <div class="col-9">
+      <h4>Welcome back, <%= @user.email  %>!</h4>
+      <%= render "dashboards/search_hashtag" %>
+      <% if @hashtag.present? %>
+        <%= link_to "Save hashtag to favourites", hashtags_path(hashtag: @hashtag, score: @score), method: :post  %>
+      <% end %>
+      <% if @score %>
+        <p>Happiness score is:</p>
+        <h1><%= @score %></h1>
+      <% end %>
+
+      <p>These are your last searched hashtags</p>
     </div>
   </div>
 </div>
-
-<% if @score %>
-  <h1><%= @score %></h1>
-<% end %>
