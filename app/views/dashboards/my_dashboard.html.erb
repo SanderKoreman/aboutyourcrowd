@@ -29,6 +29,8 @@
             <%= link_to "Bookmark #{params[:hashtag]}", hashtags_path(hashtag: @hashtag, score: @score), method: :post  %>
           <% end %>
 
+        <!--custom attribute pass-->
+        <div id="chartdiv" data-score="<%= @score %>" ></div>
 
         <p class = "mt-5">These are your last searched hashtags: </p>
 
