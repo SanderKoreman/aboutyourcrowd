@@ -1,0 +1,22 @@
+<div class="container dashboard">
+  <div class="row">
+    <div class="col-3">
+      <%= image_tag "logo-green.png", class: "logo" %>
+      <h6 class="mt-4 username">Sander Koreman</h4>
+
+      <%= render "dashboards/my_hashtags" %>
+
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+    </div>
+    <div class="col-9">
+      <h4>Welcome back, Sander!</h4>
+      <p>These are your last searched hashtags</p>
+      <%= render "dashboards/search_hashtag" %>
+
+    </div>
+  </div>
+</div>
+
+<% if @score %>
+  <h1><%= @score %></h1>
+<% end %>

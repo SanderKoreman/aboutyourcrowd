@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :hashtags, only: [ :index, :show ] do
     resources :bookmarks, only: [ :index, :create, :destroy ]
   end
+
+  get '/my-dashboard', to: 'dashboards#my_dashboard', as: :my_dashboard
 end
