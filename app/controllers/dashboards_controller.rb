@@ -48,12 +48,12 @@ class DashboardsController < ApplicationController
   end
 
   def retrieve_score(words)
-    csv = "lib/assets/hedonometer.csv"
+    csv = "lib/assets/Hedonometer.csv"
 
     # response = File.open(csv)
     scores = []
     words.each {|word|
-      CSV.new(open(csv), :headers => :first_row).each do |row|
+      CSV.foreach(csv, :headers => :first_row) do |row|
       scores << row["Happiness Score"].to_i if row["Word"] == word
     end
     }
