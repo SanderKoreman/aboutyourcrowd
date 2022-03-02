@@ -4,6 +4,7 @@ require "csv"
 
 class DashboardsController < ApplicationController
   def my_dashboard
+
     @user = current_user
     @my_hashtags = @user.hashtags
 
