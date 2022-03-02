@@ -1,0 +1,13 @@
+<h6 class="saved">My hashtags</h6>
+
+      <% if @my_hashtags.present?%>
+        <h5 class="fw-bold">My hashtags </h5>
+          <% @my_hashtags.each do |hashtag| %>
+            <%= hashtag.hashtag%>
+            <i class="fas fa-trash"></i>
+          <% end %>
+      <% else %>
+        <div class="hashtag-alert" role="alert">
+          No saved hastags.
+        </div>
+      <% end %>

@@ -1,0 +1,10 @@
+<div class= "row justify-content-center">
+  <div class="col-6">
+
+    <%= form_tag(my_dashboard_path, method: :get)do %>
+        <%= text_field_tag :hashtag %>
+      <%= submit_tag 'Get sentiment', class: "btn-primary" %>
+    <% end %>
+
+  </div>
+</div>

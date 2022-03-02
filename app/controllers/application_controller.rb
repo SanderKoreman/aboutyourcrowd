@@ -5,50 +5,51 @@ require "csv"
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
-  TEXTS = []
-  def call_twitter(query)
 
-    #endpoint fetch tweets
+  # TEXTS = []
+  # def call_twitter(query)
 
-    url = "https://api.twitter.com/2/tweets/search/recent?&query=#{query}&max_results=10&tweet.fields=lang"
+  #   #endpoint fetch tweets
 
-    # get request
-    response = URI.open(url,
-      "Authorization" => "Bearer AAAAAAAAAAAAAAAAAAAAAMjvZgEAAAAAzaTwcexM%2FozUoUW4TZjTDl30cpU%3D7oZ6mAazRU6drDRdUPTLllgfeXxKwl9OXwXjWHdyRuxgK23idR").read
-    tweets = JSON.parse(response)["data"]
-    texts = []
-    tweets.each do |hash|
-      texts << hash["text"] if hash["lang"] == "en"
-    end
-    # array of strings = tweets
-    return tweets
-  end
+  #   url = "https://api.twitter.com/2/tweets/search/recent?&query=#{query}&max_results=10&tweet.fields=lang"
 
-  def split_texts(tweets)
-    content = []
-    tweets.each do |tweet|
-      #array of strings
-      tweet.split(" ").flatten!
-    end
-    return content
-  end
+  #   # get request
+  #   response = URI.open(url,
+  #     "Authorization" => "Bearer AAAAAAAAAAAAAAAAAAAAAMjvZgEAAAAAzaTwcexM%2FozUoUW4TZjTDl30cpU%3D7oZ6mAazRU6drDRdUPTLllgfeXxKwl9OXwXjWHdyRuxgK23idR").read
+  #   tweets = JSON.parse(response)["data"]
+  #   texts = []
+  #   tweets.each do |hash|
+  #     texts << hash["text"] if hash["lang"] == "en"
+  #   end
+  #   # array of strings = tweets
+  #   return tweets
+  # end
 
-  def retrieve_score(words)
-    csv = "lib/assets/hedonometer.csv"
+  # def split_texts(tweets)
+  #   content =[]
+  #   tweets.each do |tweet|
+  #     #array of strings
+  #     tweet.split(" ").flatten!
+  #   end
+  #   return content
+  # end
 
-    # response = File.open(csv)
-    scores = []
-    words.each {|word| CSV.foreach(csv, headers: :first_row) do |row|
-      scores << row["Happiness Score"].to_i if row["Word"] == word
-    end
-    }
-    sum = 0.0
-    scores.each { |num|
-      sum += num
-    }
-    sum = (sum / scores.count)
-    return sum.round(1)
-  end
+  # def retrieve_score(words)
+  #   csv = "lib/assets/hedonometer.csv"
+
+  #   # response = File.open(csv)
+  #   scores = []
+  #   words.each {|word| CSV.foreach(csv, headers: :first_row) do |row|
+  #     scores << row["Happiness Score"].to_i if row["Word"] == word
+  #   end
+  #   }
+  #   sum = 0.0
+  #   scores.each { |num|
+  #     sum += num
+  #   }
+  #   sum = (sum / scores.count)
+  #   return sum.round(1)
+  # end
 
   # p retrieve_score("happiness", "love", "terrorist")
 end
