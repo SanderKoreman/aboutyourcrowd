@@ -1,8 +1,14 @@
 <div class="container landing mt-4">
   <div class="landing-text">
-    <h1 class="header-landing">Get to know <br>your crowd</h1>
-    <h4>In just 3 simple steps</h4>
-    <%= link_to "Login", new_user_session_path, class: "button-primary link" %>
-    <%= link_to "Register", new_user_session_path, class: "button-secondary link" %>
+    <h1 class="header-landing">Get to <span class="landing-word">know</span><br>your crowd</h1>
+    <h6 class="mt-4"><span class="landing-word">About Your Crowd</span> lets you find out what your audience<br>thinks of your brand, company or product in just <span class="landing-word">3</span> steps!</h6>
+    <div class="buttons-landing mt-4">
+    <% if user_signed_in? %>
+      <%= link_to "Your dashboard", my_dashboard_path, class: "button-primary link" %>
+    <% else %>
+      <%= link_to "Login", new_user_session_path, class: "button-primary link" %>
+      <%= link_to "Register", new_user_session_path, class: "button-secondary link" %>
+    <% end %>
+    </div>
   </div>
 </div>
