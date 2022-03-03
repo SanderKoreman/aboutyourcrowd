@@ -3,7 +3,7 @@ class HashtagsController < ApplicationController
   end
 
   def show
-    @hashtag = Hahstag.find([params[:id]])
+    @hashtag = Hashtag.find([params[:id]])
   end
 
   def create
