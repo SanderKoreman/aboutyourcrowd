@@ -8,7 +8,7 @@ class DashboardsController < ApplicationController
     @user = current_user
     @my_hashtags = @user.hashtags
 
-    # call functions
+
     if params[:hashtag]
       tweets = call_twitter(params[:hashtag])
       @score = retrieve_score(split_texts(tweets))

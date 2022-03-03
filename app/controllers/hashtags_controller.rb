@@ -6,7 +6,6 @@ class HashtagsController < ApplicationController
     @hashtag = Hashtag.find([params[:id]])
   end
 
-
   def create
     @hashtag = Hashtag.new(hashtag: params[:hashtag], score: params[:score])
     @hashtag.user = current_user
