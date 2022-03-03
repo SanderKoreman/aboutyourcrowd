@@ -1,9 +1,9 @@
-<div class="container dashboard">
+<div class="container dashboard mt-4">
   <div class="row">
     <div class="col-3 d-flex column justify-content-between">
       <div>
 
-        <%= image_tag "logo4.png", class: "logo" %>
+        <%= image_tag "logo5.png", class: "logo" %>
         <h6 class="mt-4 username"><%= @user.email  %></h4>
 
 
@@ -13,11 +13,10 @@
 <!-------My hashtags card---------------------------->
         <%= render "dashboards/my_hashtags" %>
       </div>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button-secondary link-dashboard-secondary" %>
     </div>
 <!--------DASHBOARD RIGHT Side---------------------------->
     <div class="col-9">
-          <h4>Welcome back, <%= @user.email  %>!</h4>
           <%= render "dashboards/search_hashtag" %>
 <!--------Happiness score---------------------------->
             <% if @score %>
@@ -37,3 +36,7 @@
     </div>
   </div>
 </div>
+
+<% if @tweets.present? %>
+  <p><%= @tweets %></p>
+<% end %>
