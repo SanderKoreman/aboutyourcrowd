@@ -3,7 +3,9 @@
       <% if @my_hashtags.present?%>
           <ul>
             <% @my_hashtags.each do |hashtag| %>
-              <li><%= hashtag.hashtag%>
+              <li>
+                <%= hashtag.hashtag %>
+                <%= hashtag.score %>
                 <a data-confirm="Are you sure?" data-method="delete" href="hashtags/<%= hashtag.id %>">
                   <i class="fas fa-trash"></i>
                 </a>

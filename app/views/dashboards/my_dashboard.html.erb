@@ -25,7 +25,10 @@
             <h1><%= @score %></h1>
             <%= render "happiness_chart" %>
           <% end %>
-<!--------Save bookmark---------------------------->
+
+<!--------Update bookmark--->
+
+<!--------Save bookmark--->
           <% if @hashtag.present? %>
             <%= link_to "Bookmark #{params[:hashtag]}", hashtags_path(hashtag: @hashtag, score: @score), method: :post  %>
           <% end %>

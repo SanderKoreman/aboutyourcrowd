@@ -41,7 +41,6 @@ var chart = root.container.children.push(
 );
 
 
-
 // Create axis and its renderer
 // https://www.amcharts.com/docs/v5/charts/radar-chart/gauge-charts/#Axes
 var axisRenderer = am5radar.AxisRendererCircular.new(root, {

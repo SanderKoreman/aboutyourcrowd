@@ -54,7 +54,7 @@ class DashboardsController < ApplicationController
     scores = []
     words.each {|word|
       CSV.foreach(csv, :headers => :first_row) do |row|
-      scores << row["Happiness Score"].to_i if row["Word"] == word
+      scores << row["Happiness Score"].to_f if row["Word"] == word
     end
     }
     sum = 0.0
