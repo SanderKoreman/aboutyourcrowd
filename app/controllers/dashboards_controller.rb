@@ -14,7 +14,6 @@ class DashboardsController < ApplicationController
       @score = retrieve_score(split_texts(tweets))
       @hashtag = params[:name]
     end
-
   end
 
   private
