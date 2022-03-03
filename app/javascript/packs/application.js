@@ -15,11 +15,9 @@ ActiveStorage.start()
 import "controllers"
 import "bootstrap"
 
+
 // CHARTS STAFF
 
-// Create root element
-// https://www.amcharts.com/docs/v5/getting-started/#Root_element
-console.log(document.getElementById("chartdiv").getAttribute("data-score"));
 var score = document.getElementById("chartdiv").getAttribute("data-score");
 var root = am5.Root.new("chartdiv");
 
@@ -40,6 +38,7 @@ var chart = root.container.children.push(
   })
 );
 
+chart.getNumberFormatter().set();
 
 // Create axis and its renderer
 // https://www.amcharts.com/docs/v5/charts/radar-chart/gauge-charts/#Axes
@@ -57,7 +56,7 @@ var xAxis = chart.xAxes.push(
   am5xy.ValueAxis.new(root, {
     maxDeviation: 0,
     min: 0,
-    max: 10,
+    max: 9,
     strictMinMax: true,
     renderer: axisRenderer
   })
@@ -107,38 +106,43 @@ var label = chart.radarContainer.children.push(
   })
 );
 
-axisDataItem.set("value", 50);
+axisDataItem.set("value", 0);
 bullet.get("sprite").on("rotation", function () {
-  var value = axisDataItem.get("value");
-  label.set("text", value);
+  var value = axisDataItem.get(score);
+  label.set("text", score);
 });
 
 axisDataItem.animate({
-  key: "value",
-  to: score,
-  duration: 500,
-  easing: am5.ease.out(am5.ease.cubic)
-});
+    key: "value",
+    to: score,
+    duration: 500,
+    easing: am5.ease.out(am5.ease.cubic)
+  });
 
-// setInterval(function () {
-//   var value = Math.round(Math.random() * 100);
+setInterval(function () {
+  var value = score;
 
+  axisDataItem.animate({
+    key: "value",
+    to: score,
+    duration: 500,
+    easing: am5.ease.out(am5.ease.cubic)
+  });
 
+  axisRange0.animate({
+    key: "endValue",
+    to: value,
+    duration: 500,
+    easing: am5.ease.out(am5.ease.cubic)
+  });
 
-//   axisRange0.animate({
-//     key: "endValue",
-//     to: value,
-//     duration: 500,
-//     easing: am5.ease.out(am5.ease.cubic)
-//   });
-
-//   axisRange1.animate({
-//     key: "value",
-//     to: value,
-//     duration: 500,
-//     easing: am5.ease.out(am5.ease.cubic)
-//   });
-// }, 2000);
+  axisRange1.animate({
+    key: "value",
+    to: value,
+    duration: 500,
+    easing: am5.ease.out(am5.ease.cubic)
+  });
+}, 1000);
 
 chart.bulletsContainer.set("mask", undefined);
 
