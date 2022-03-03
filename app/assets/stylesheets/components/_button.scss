@@ -1,29 +1,76 @@
-.btn-primary {
-  background-color: $blue;
-  color: white;
-  padding: 6px 14px;
-  border-radius: 6px;
-  box-shadow: 0 3px $dark-blue;
-  font-weight: 700;
+/* CSS */
+.button-primary {
+  appearance: button;
+  background-color: $dark-blue;
+  background-image: none;
+  border: none;
+  border-radius: 4px;
+  box-shadow: $light-blue 4px 4px 0 0,$green 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: $light-blue;
+  display: inline-block;
   font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: none;
   text-decoration: none;
-  &:hover {
-    box-shadow: 3px $dark-blue;
-    color: white;
-  }
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
 }
 
-.btn-secondary {
-  background-color: $green;
-  color: rgb(255, 255, 255);
-  padding: 6px 14px;
-  border-radius: 6px;
-  box-shadow: 0 3px #729c93;
-  font-weight: 700;
-  font-size: 14px;
+.link {
+  appearance: none !important;
+}
+
+.link-dashboard-secondary {
+  appearance: none !important;
+  box-shadow: white 4px 4px 0 0,$dark-blue 4px 4px 0 1px !important;
+}
+
+.link-dashboard-primary {
+  appearance: none !important;
+  box-shadow: white 4px 4px 0 0,$green 4px 4px 0 1px !important;
+}
+
+.button-primary:hover {
   text-decoration: none;
-  &:hover {
-    background-color: #729c93;
-    color: white;
-  }
+  color: white;
+}
+
+.button-secondary {
+  appearance: button;
+  background-color: $green;
+  background-image: none;
+  border: none;
+  border-radius: 4px;
+  box-shadow: $light-blue 4px 4px 0 0,$dark-blue 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: $white;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: none;
+  text-decoration: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.button-secondary:hover {
+  text-decoration: none;
+  color: white;
 }

@@ -24,7 +24,7 @@ class DashboardsController < ApplicationController
 
     #endpoint fetch tweets
 
-    url = "https://api.twitter.com/2/tweets/search/recent?&query=#{query}%20-is%3Aretweet%20%20lang%3Aen&max_results=10"
+    url = "https://api.twitter.com/2/tweets/search/recent?&query=%23#{query}%20-is%3Aretweet%20%20lang%3Aen&max_results=10"
 
     # get request
     response = URI.open(url,
@@ -39,7 +39,7 @@ class DashboardsController < ApplicationController
   end
 
   def split_texts(tweets)
-    content =[]
+    content = []
     tweets.each do |tweet|
       #array of strings
       content << tweet.split(" ").flatten
@@ -64,8 +64,6 @@ class DashboardsController < ApplicationController
     sum = (sum / scores.count)
     return sum.round(1)
   end
-
 end
-
 
 # words.each {|word| CSV.foreach(csv, headers: :first_row) do |row|
