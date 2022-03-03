@@ -16,7 +16,6 @@
 <!--Happiness score and Chart---------------------------->
             <% if @score.present? %>
               <p>Happiness score is:</p>
-              <h1><%= @score %></h1>
               <%= render "dashboards/happiness_chart" %>
             <% end %>
 
@@ -28,9 +27,6 @@
               <%= link_to "Bookmark #{params[:name]}", hashtags_path(name: @hashtag, score: @score), method: :post  %>
             <% end %>
           <% end %>
-
-<!---Last searched hashtags --------->
-        <p class = "mt-5">These are your last searched hashtags: </p>
     </div>
   </div>
 </div>

@@ -1,9 +1,6 @@
-<div class= "row justify-content-center">
-  <div class="col-6">
-
-    <%= form_tag(my_dashboard_path, method: :get)do %>
-        <%= text_field_tag :name %>
-      <%= submit_tag 'Get sentiment', class: "button-primary link-dashboard-primary" %>
-    <% end %>
-  </div>
+<div class="mt-2 mb-2">
+  <%= form_tag(my_dashboard_path, method: :get, class: 'search-form') do %>
+    <%= text_field_tag :name, "", class: 'search-input-form', placeholder: "Enter a hashtag" %>
+    <%= submit_tag 'Get sentiment', class: "button-primary link-dashboard-primary" %>
+  <% end %>
 </div>
