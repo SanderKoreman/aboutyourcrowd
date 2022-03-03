@@ -5,35 +5,30 @@
         <%= image_tag "logo-green.png", class: "logo" %>
         <h6 class="mt-4 username"><%= @user.email  %></h4>
 
-<!------------------------------My hashtags card---------------------------->
-
+<!-------My hashtags card---------------------------->
         <%= render "dashboards/my_hashtags" %>
       </div>
       <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
     </div>
-
-<!------------------------------DASHBOARD RIGHT---------------------------->
+<!--------DASHBOARD RIGHT Side---------------------------->
     <div class="col-9">
-
           <h4>Welcome back, <%= @user.email  %>!</h4>
           <%= render "dashboards/search_hashtag" %>
-    <!--------------Happiness score---------------------------->
+<!--------Happiness score---------------------------->
             <% if @score %>
             <p>Happiness score is:</p>
             <h1><%= @score %></h1>
             <%= render "happiness_chart" %>
           <% end %>
-
-    <!--------------Save bookmark---------------------------->
+<!--------Save bookmark---------------------------->
           <% if @hashtag.present? %>
             <%= link_to "Bookmark #{params[:hashtag]}", hashtags_path(hashtag: @hashtag, score: @score), method: :post  %>
           <% end %>
-
-        <!--custom attribute pass-->
+<!--------CHART -->
         <div id="chartdiv" data-score="<%= @score %>" ></div>
 
+<!--------Last searched hashtags -->
         <p class = "mt-5">These are your last searched hashtags: </p>
-
     </div>
   </div>
 </div>
