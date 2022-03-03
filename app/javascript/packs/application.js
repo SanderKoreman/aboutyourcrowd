@@ -15,7 +15,6 @@ ActiveStorage.start()
 import "controllers"
 import "bootstrap"
 
-
 // CHARTS STAFF
 
 // Passing score from Ruby
