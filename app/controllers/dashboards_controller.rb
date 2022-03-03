@@ -9,10 +9,10 @@ class DashboardsController < ApplicationController
     @my_hashtags = @user.hashtags
 
 
-    if params[:hashtag]
-      @tweets = call_twitter(params[:hashtag])
-      @score = retrieve_score(split_texts(@tweets))
-      @hashtag = params[:hashtag]
+    if params[:name]
+      tweets = call_twitter(params[:name])
+      @score = retrieve_score(split_texts(tweets))
+      @hashtag = params[:name]
     end
 
   end
@@ -53,9 +53,9 @@ class DashboardsController < ApplicationController
     # response = File.open(csv)
     scores = []
     words.each {|word|
-      CSV.foreach(csv, headers: :first_row) do |row|
-        scores << row["Happiness Score"].to_f if row["Word"] == word
-      end
+      CSV.foreach(csv, :headers => :first_row) do |row|
+      scores << row["Happiness Score"].to_f if row["Word"] == word
+    end
     }
     sum = 0.0
     scores.each { |num|

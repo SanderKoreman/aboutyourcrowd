@@ -2,36 +2,34 @@
   <div class="row">
     <div class="col-3 d-flex column justify-content-between">
       <div>
-
         <%= image_tag "logo5.png", class: "logo" %>
-        <h6 class="mt-4 username"><%= @user.email  %></h4>
+        <h6 class="mt-4 username"><%= @user.name  %></h4>
 
-
-<!------------------------------My hashtags card---------------------------->
-
-
-<!-------My hashtags card---------------------------->
+<!--Dashboard LEFT Side Username and my hashtags ---------------------------->
         <%= render "dashboards/my_hashtags" %>
       </div>
       <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button-secondary link-dashboard-secondary" %>
     </div>
-<!--------DASHBOARD RIGHT Side---------------------------->
+<!--Dashboard RIGHT Side---------------------------->
     <div class="col-9">
           <%= render "dashboards/search_hashtag" %>
-<!--------Happiness score---------------------------->
-            <% if @score %>
-            <p>Happiness score is:</p>
-            <h1><%= @score %></h1>
-            <%= render "happiness_chart" %>
-          <% end %>
-<!--------Save bookmark---------------------------->
-          <% if @hashtag.present? %>
-            <%= link_to "Bookmark #{params[:hashtag]}", hashtags_path(hashtag: @hashtag, score: @score), method: :post  %>
-          <% end %>
-<!--------CHART -->
-        <div id="chartdiv" data-score="<%= @score %>" ></div>
+<!--Happiness score and Chart---------------------------->
+            <% if @score.present? %>
+              <p>Happiness score is:</p>
+              <h1><%= @score %></h1>
+              <%= render "dashboards/happiness_chart" %>
+            <% end %>
 
-<!--------Last searched hashtags -->
+<!---Save bookmark and Update score ---------->
+          <% if @hashtag.present? %>
+            <% if Hashtag.find_by(name: @hashtag) %>
+              <%= link_to "Update #{params[:name]}", hashtags_path(name: @hashtag, score: @score), method: :post  %>
+            <% else %>
+              <%= link_to "Bookmark #{params[:name]}", hashtags_path(name: @hashtag, score: @score), method: :post  %>
+            <% end %>
+          <% end %>
+
+<!---Last searched hashtags --------->
         <p class = "mt-5">These are your last searched hashtags: </p>
     </div>
   </div>
