@@ -8,13 +8,15 @@ class HashtagsController < ApplicationController
 
   def create
 
-    if params[:hashtag] == Hashtag.find_by(hashtag: params[:hashtag]).hashtag
-      update()
+    if Hashtag.find_by(name: params[:name])
+      Hashtag.find_by(name: params[:name]).update(score: params[:score])
+      redirect_to my_dashboard_path
       else
-      @hashtag = Hashtag.new(hashtag: params[:hashtag], score: params[:score])
+      @hashtag = Hashtag.new(name: params[:name], score: params[:score])
       @hashtag.user = current_user
+
         if @hashtag.save
-          redirect_to my_dashboard_path#hashtag_path(@hashtag), notice: 'Hashtag was successfully created.'
+          redirect_to my_dashboard_path#hashtag_path(@name), notice: 'Hashtag was successfully created.'
           else
           render :new
         end
@@ -22,9 +24,6 @@ class HashtagsController < ApplicationController
   end
 
   def update
-    @hashtag = Hashtag.find_by(hashtag: params[:hashtag])
-    @hashtag.update(hashtag_params)
-    redirect_to my_dashboard_path
   end
 
   def destroy
@@ -36,6 +35,6 @@ class HashtagsController < ApplicationController
   private
 
   def hashtag_params
-    params.require(:hashtag).permit(:hashtag, :score)
+    params.require(:hashtag).permit(:name, :score)
   end
 end

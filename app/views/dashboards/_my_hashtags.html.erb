@@ -1,10 +1,11 @@
-<h5 class="saved">My hashtags</h5>
+<h5 class="saved">My hashtagss</h5>
 
       <% if @my_hashtags.present?%>
           <ul>
             <% @my_hashtags.each do |hashtag| %>
               <li>
-                <%= hashtag.hashtag %>
+                <% link_to hashtag.name %>
+                <%= hashtag.name %>
                 <%= hashtag.score %>
                 <a data-confirm="Are you sure?" data-method="delete" href="hashtags/<%= hashtag.id %>">
                   <i class="fas fa-trash"></i>
@@ -12,7 +13,7 @@
               </li>
             <% end %>
         <% else %>
-          <div class="hashtag-alert" role="alert">
+          <div class="name-alert" role="alert">
             No saved hastags.
           </div>
           </ul>
