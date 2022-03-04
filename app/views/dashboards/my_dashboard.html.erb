@@ -3,7 +3,7 @@
     <div class="col-3 d-flex column justify-content-between">
       <div>
         <%= image_tag "logo5.png", class: "logo" %>
-        <h6 class="mt-4 username">Welcome back, <%=  @user.name  %></h4>
+        <h6 class="mt-4 username">Welcome back, <span class="yellow-word"><%= @user.name %></span></h4>
 
 <!--Dashboard LEFT Side Username and my hashtags ---------------------------->
         <%= render "dashboards/my_hashtags" %>

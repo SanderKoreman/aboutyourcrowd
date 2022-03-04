@@ -1,15 +1,45 @@
 .saved-hashtags-list {
   list-style: none;
-}
-
-.saved-hashtag-card {
   font-size: 14px;
   font-weight: 700;
-  margin-left: -32px;
   padding: 6px 14px;
   border: 1px solid $green;
   border-radius: $border-radius-sm;
   margin-bottom: 12px;
+  margin-top: 12px;
   box-shadow: $yellow 4px 4px 0 0, $yellow 4px 4px 0 1px;
   box-sizing: border-box;
 }
+
+.saved-hashtag-card {
+  font-size: 16px;
+  color: $green;
+  padding: 12px 6px;
+  border-bottom: 1px solid $lighter-gray;
+  &:hover {
+    color: black;
+    border-left: 2px solid $green;
+    padding: 12px 4px;
+  }
+}
+
+.saved-hashtag-card:last-child {
+  border-bottom: none;
+}
+
+.saved-hashtag-card a {
+  font-size: 16px;
+  color: $green;
+  text-decoration: none;
+  &:hover {
+    color: black;
+  }
+}
+
+
+// .saved-hashtag-card a {
+//   color: $green;
+//   &:hover {
+//     color: black;
+//   }
+// }
