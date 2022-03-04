@@ -1,10 +1,10 @@
 <h5 class="saved">My hashtags</h5>
 
       <% if @my_hashtags.present?%>
-          <ul>
+          <ul class="saved-hashtags-list">
             <% @my_hashtags.each do |hashtag| %>
-              <li class="saved-hashtags">
-                <div id="hashtagname"><%= hashtag.name%></div>
+              <li class="saved-hashtag-card">
+                <div id="hashtagname"><%= "##{hashtag.name.capitalize}"%></div>
                   <div id="hashtagdate"><%= hashtag.updated_at %></div>
                   <div id="hashtagscore"><%= hashtag.score %></div>
                 <a data-confirm="Are you sure?" data-method="delete" href="hashtags/<%= hashtag.id %>">
