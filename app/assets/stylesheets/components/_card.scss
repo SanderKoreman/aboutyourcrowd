@@ -17,7 +17,7 @@
   padding: 12px 6px;
   border-bottom: 1px solid $lighter-gray;
   &:hover {
-    color: black;
+    color: $dark-blue;
     border-left: 2px solid $green;
     padding: 12px 4px;
   }
@@ -36,10 +36,49 @@
   }
 }
 
+.last-searched-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  text-decoration: none;
+  background-color: white;
+  border-radius: $border-radius-sm;
+  border: 1px solid $lighter-gray;
+  margin-bottom: 20px;
+  margin-left: -32px;
+  box-shadow: $light-blue 4px 4px 0 0;
+}
 
-// .saved-hashtag-card a {
-//   color: $green;
-//   &:hover {
-//     color: black;
-//   }
-// }
+.last-searched-card:first-child {
+  margin-top: 20px;
+}
+
+.last-searched-card:last-child {
+  margin-bottom: 0;
+}
+
+.last-searched-score {
+  margin-left: 8px;
+  margin-right: 12px;
+  margin-bottom: 0rem;
+  color: $gray;
+}
+
+.last-searched-initial {
+  background-color: $green;
+  font-size: 55px;
+  text-align: center;
+  color: white;
+  height: 60px;
+  width: 60px;
+  border-radius: $border-radius-sm;
+  margin-right: 12px;
+  margin-bottom: auto;
+}
+
+.last-searched-card a {
+  font-weight: 700;
+  text-decoration: none;
+  color: $dark-blue;
+}
