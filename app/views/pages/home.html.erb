@@ -4,7 +4,7 @@
     <h6 class="mt-4"><span class="yellow-word">About Your Crowd</span> lets you find out what your audience<br>thinks of your brand, company or product in just <span class="landing-word">3</span> steps!</h6>
     <div class="buttons-landing mt-4">
     <% if user_signed_in? %>
-      <%= link_to "Your dashboard", my_dashboard_path, class: "button-primary link" %>
+      <%= link_to "Dashboard", my_dashboard_path, class: "button-primary link" %>
     <% else %>
       <%= link_to "Login", new_user_session_path, class: "button-primary link" %>
       <%= link_to "Sign up", new_user_registration_path, class: "button-secondary link" %>
