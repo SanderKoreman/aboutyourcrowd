@@ -12,6 +12,8 @@
 }
 
 .saved-hashtag-card {
+  display: flex;
+  justify-content: space-between;
   font-size: 16px;
   color: $green;
   padding: 12px 6px;
