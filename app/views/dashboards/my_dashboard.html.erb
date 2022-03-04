@@ -3,7 +3,7 @@
     <div class="col-3 d-flex column justify-content-between">
       <div>
         <%= image_tag "logo5.png", class: "logo" %>
-        <h6 class="mt-4 username">Welcome back, <span class="yellow-word"><%= @user.name %></span></h4>
+        <h6 class="mt-4 username">Logged in as: <%= @user.name %></h4>
 
 <!--Dashboard LEFT Side Username and my hashtags ---------------------------->
         <%= render "dashboards/my_hashtags" %>
@@ -13,23 +13,24 @@
 <!--Dashboard RIGHT Side---------------------------->
     <div class="col-9">
           <%= render "dashboards/search_hashtag" %>
-<!--Happiness score and Chart---------------------------->
-
-            <% if @score.present? %>
-              <p>Happiness score is:</p>
-              <%= render "dashboards/happiness_chart" %>
-              <% else %>
-              <h1>create table to <br> SHOW LAST SEARCHES</h1>
-            <% end %>
-
-<!---Save bookmark and Update score ---------->
+    <!---Save bookmark and Update score ---------->
           <% if @hashtag.present? %>
             <% if Hashtag.find_by(name: @hashtag) %>
-              <%= link_to "Update #{params[:name]}", hashtags_path(name: @hashtag, score: @score), method: :post  %>
+              <%= link_to "Update ##{params[:name].capitalize}", hashtags_path(name: @hashtag, score: @score), method: :post  %>
             <% else %>
-              <%= link_to "Bookmark #{params[:name]}", hashtags_path(name: @hashtag, score: @score), method: :post  %>
+              <%= link_to "Bookmark ##{params[:name].capitalize}", hashtags_path(name: @hashtag, score: @score), class: "button-secondary link-dashboard-secondary", method: :post  %>
             <% end %>
           <% end %>
+<!--Happiness score and Chart---------------------------->
+            <% if @score.present? %>
+              <%= render "dashboards/happiness_chart" %>
+              <% else %>
+              <%= render "dashboards/last_searches" %>
+            <% end %>
     </div>
   </div>
 </div>
+
+
+ <%# if user has saved hashtags %>
+ <%# show cards with scores for every hashtag, sorted by most recent search %>
