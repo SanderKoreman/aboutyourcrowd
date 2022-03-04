@@ -26,7 +26,7 @@
 <!---Save bookmark and Update score ---------->
           <% if @hashtag.present? %>
             <% if Hashtag.find_by(name: @hashtag) %>
-              <%= link_to "Update ##{params[:name].capitalize}", hashtags_path(name: @hashtag, score: @score), method: :post  %>
+              <%= link_to "Update ##{params[:name].capitalize}", hashtags_path(name: @hashtag, score: @score), class: "button-secondary link-dashboard-secondary", method: :post  %>
             <% else %>
               <%= link_to "Bookmark ##{params[:name].capitalize}", hashtags_path(name: @hashtag, score: @score), class: "button-secondary link-dashboard-secondary", method: :post  %>
             <% end %>
