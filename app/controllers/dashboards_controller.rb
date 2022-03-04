@@ -9,11 +9,11 @@ class DashboardsController < ApplicationController
     # byebug_pry
     if params[:name]
       tweets = call_twitter(params[:name])
-      @score = retrieve_score(split_texts(tweets))
-      @hashtag = params[:name]
+      unless tweets.class == String
+        @score = retrieve_score(split_texts(tweets))
+        @hashtag = params[:name]
+      end
     end
-
-
   end
 
   private
@@ -21,20 +21,22 @@ class DashboardsController < ApplicationController
   TEXTS = []
   def call_twitter(query)
 
-    #endpoint fetch tweets
-
     url = "https://api.twitter.com/2/tweets/search/recent?&query=%23#{query}%20-is%3Aretweet%20%20lang%3Aen&max_results=10"
 
     # get request
     response = URI.open(url,
       "Authorization" => "Bearer AAAAAAAAAAAAAAAAAAAAAMjvZgEAAAAAzaTwcexM%2FozUoUW4TZjTDl30cpU%3D7oZ6mAazRU6drDRdUPTLllgfeXxKwl9OXwXjWHdyRuxgK23idR").read
-      tweets = JSON.parse(response)["data"]
-    texts = []
-    tweets.each do |hash|
-      texts << hash["text"]
+    tweets = JSON.parse(response)["data"]
+    if tweets.nil?
+      redirect_to my_dashboard_path
+    else
+      texts = []
+      tweets.each do |hash|
+        texts << hash["text"]
+      end
+      # array of strings = tweets
+      return texts
     end
-    # array of strings = tweets
-    return texts
   end
 
   def split_texts(tweets)
