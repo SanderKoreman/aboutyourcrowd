@@ -1,20 +1,20 @@
 <h5 class="saved">My hashtags</h5>
 
-      <% if @my_hashtags.present?%>
-          <ul class="saved-hashtags-list">
-            <% @my_hashtags.each do |hashtag| %>
-              <li class="saved-hashtag-card">
-                <div id="hashtagname"><%= "##{hashtag.name.capitalize}"%></div>
-                  <div id="hashtagdate" style="display: none;"><%= hashtag.updated_at %></div>
-                  <div id="hashtagscore" style="display: none;"><%= hashtag.score %></div>
-                <a data-confirm="Are you sure?" data-method="delete" href="hashtags/<%= hashtag.id %>">
-                  <i class="fas fa-trash"></i>
-                </a>
-              </li>
-            <% end %>
-        <% else %>
-          <div class="name-alert" role="alert">
-            No saved hashtags.
-          </div>
-          </ul>
-      <% end %>
+<% if @my_hashtags.present?%>
+  <ul class="saved-hashtags-list">
+    <% @my_hashtags.each do |hashtag| %>
+      <li class="saved-hashtag-card">
+        <span id="hashtagname"><%= "##{hashtag.name.capitalize}"%></span>
+        <a data-confirm="Are you sure?" data-method="delete" href="hashtags/<%= hashtag.id %>">
+        <i class="fas fa-trash"></i>
+        </a>
+        <div id="hashtagdate" style="display: none;"><%= hashtag.updated_at %></div>
+        <div id="hashtagscore" style="display: none;"><%= hashtag.score %></div>
+      </li>
+    <% end %>
+<% else %>
+  <div class="name-alert" role="alert">
+    No saved hashtags.
+  </div>
+  </ul>
+<% end %>
