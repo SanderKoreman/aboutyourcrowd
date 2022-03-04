@@ -5,8 +5,8 @@
             <% @my_hashtags.each do |hashtag| %>
               <li class="saved-hashtag-card">
                 <div id="hashtagname"><%= "##{hashtag.name.capitalize}"%></div>
-                  <div id="hashtagdate"><%= hashtag.updated_at %></div>
-                  <div id="hashtagscore"><%= hashtag.score %></div>
+                  <div id="hashtagdate" style="display: none;"><%= hashtag.updated_at %></div>
+                  <div id="hashtagscore" style="display: none;"><%= hashtag.score %></div>
                 <a data-confirm="Are you sure?" data-method="delete" href="hashtags/<%= hashtag.id %>">
                   <i class="fas fa-trash"></i>
                 </a>
