@@ -1,0 +1,83 @@
+<!--LOGIN BUTTON-->
+<button type="button" class="button-primary linked" data-toggle="modal" data-target=".bd-example-modal-lg">Login</button>
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-10 p-5 align-left">
+            <h2>Log in</h2>
+            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                      <div class="form-inputs">
+                        <%= f.input :email,
+                                    required: false,
+                                    autofocus: true,
+                                    input_html: { autocomplete: "email" } %>
+                        <%= f.input :password,
+                                    required: false,
+                                    input_html: { autocomplete: "current-password" } %>
+                        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                      </div>
+                      <div class="form-actions">
+                        <%= f.button :submit, "Log in", class: "button-primary mb-4" %>
+                      </div>
+                    <% end %>
+            <%= link_to "Forgot your password?", new_password_path(resource_name), class: "button-secondary mb-3" %><br />
+            <%= link_to "Sign up", new_user_registration_path, class: "button-secondary link" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--SIGNUP BUTTON-->
+<button type="button" class="button-secondary linked" data-toggle="modal" data-target="#modal-signup">Sign up</button>
+<div id="modal-signup" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-10 p-5 align-left">
+            <h2>Sign up</h2>
+                  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                    <%= f.error_notification %>
+
+                    <div class="form-inputs">
+                      <%= f.input :name,
+                                  required: true,
+                                  autofocus: true,
+                                  input_html: { autocomplete: "name" }%>
+                      <%= f.input :email,
+                                  required: true,
+                                  input_html: { autocomplete: "email" }%>
+                      <%= f.input :password,
+                                  required: true,
+                                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                                  input_html: { autocomplete: "new-password" } %>
+                      <%= f.input :password_confirmation,
+                                  required: true,
+                                  input_html: { autocomplete: "new-password" } %>
+                    </div>
+
+                    <div class="form-actions">
+                      <%= f.button :submit, "Sign up", class: "button-primary mb-4"%>
+                    </div>
+                  <% end %>
+                <%= link_to "Login", new_user_session_path, class: "button-secondary link" %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!--BOOTSTRAP JAVASCRIPT-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

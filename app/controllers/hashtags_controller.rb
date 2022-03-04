@@ -32,6 +32,10 @@ class HashtagsController < ApplicationController
     redirect_to my_dashboard_path
   end
 
+  # def formatted_updated_at
+  #   updated_at.strftime("%a %d %b %Y %H : %M")
+  # end
+
   private
 
   def hashtag_params
