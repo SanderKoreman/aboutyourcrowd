@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "uikit", to: "pages#uikit"
   get "test", to: "pages#test"
 
+
   resources :users, only: [ :edit, :update ]
 
   resources :hashtags, only: [ :index, :show, :create, :destroy, :update]

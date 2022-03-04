@@ -4,16 +4,16 @@ require "csv"
 
 class DashboardsController < ApplicationController
   def my_dashboard
-
     @user = current_user
     @my_hashtags = @user.hashtags
-
-
+    # byebug_pry
     if params[:name]
       tweets = call_twitter(params[:name])
       @score = retrieve_score(split_texts(tweets))
       @hashtag = params[:name]
     end
+
+
   end
 
   private

@@ -3,10 +3,10 @@
       <% if @my_hashtags.present?%>
           <ul>
             <% @my_hashtags.each do |hashtag| %>
-              <li>
-                <% link_to hashtag.name %>
-                <%= hashtag.name %>
-                <%= hashtag.score %>
+              <li class="saved-hashtags">
+                <div id="hashtagname"><%= hashtag.name%></div>
+                  <div id="hashtagdate"><%= hashtag.updated_at %></div>
+                  <div id="hashtagscore"><%= hashtag.score %></div>
                 <a data-confirm="Are you sure?" data-method="delete" href="hashtags/<%= hashtag.id %>">
                   <i class="fas fa-trash"></i>
                 </a>
