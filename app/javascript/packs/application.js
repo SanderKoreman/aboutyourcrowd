@@ -15,11 +15,17 @@ ActiveStorage.start()
 import "controllers"
 import "bootstrap"
 
-
 // CHARTS STAFF
 
+// Passing score from Ruby
+var score = document.getElementById("chartdiv").getAttribute("data-score");
+
+
+// Create root element
+// https://www.amcharts.com/docs/v5/getting-started/#Root_element
 var score = document.getElementById("chartdiv").getAttribute("data-score");
 var root = am5.Root.new("chartdiv");
+
 
 // Set themes
 // https://www.amcharts.com/docs/v5/concepts/themes/
@@ -106,21 +112,13 @@ var label = chart.radarContainer.children.push(
   })
 );
 
-axisDataItem.set("value", 0);
+axisDataItem.set("value", 50);
 bullet.get("sprite").on("rotation", function () {
-  var value = axisDataItem.get(score);
+  var value = axisDataItem.get("value");
   label.set("text", score);
 });
 
-axisDataItem.animate({
-    key: "value",
-    to: score,
-    duration: 500,
-    easing: am5.ease.out(am5.ease.cubic)
-  });
-
-setInterval(function () {
-  var value = score;
+/* TUT */
 
   axisDataItem.animate({
     key: "value",
@@ -128,6 +126,11 @@ setInterval(function () {
     duration: 500,
     easing: am5.ease.out(am5.ease.cubic)
   });
+ /*
+setInterval(function () {
+  var value = Math.round(Math.random() * 100);
+
+
 
   axisRange0.animate({
     key: "endValue",
@@ -142,17 +145,18 @@ setInterval(function () {
     duration: 500,
     easing: am5.ease.out(am5.ease.cubic)
   });
-}, 1000);
+}, 2000);
+*/
 
 chart.bulletsContainer.set("mask", undefined);
 
 var colorSet = am5.ColorSet.new(root, {});
-
+/* TUT */
 var axisRange0 = xAxis.createAxisRange(
   xAxis.makeDataItem({
     above: true,
-    value: 0,
-    endValue: 50
+    value: score,
+    endValue: 9
   })
 );
 
@@ -164,12 +168,12 @@ axisRange0.get("axisFill").setAll({
 axisRange0.get("label").setAll({
   forceHidden: true
 });
-
+/* TUT */
 var axisRange1 = xAxis.createAxisRange(
   xAxis.makeDataItem({
     above: true,
-    value: 50,
-    endValue: 100
+    value: score,
+    endValue: 0
   })
 );
 
@@ -183,4 +187,4 @@ axisRange1.get("label").setAll({
 });
 
 // Make stuff animate on load
-chart.appear(1000, 100);
+chart.appear(1000, 9);

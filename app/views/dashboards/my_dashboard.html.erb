@@ -14,9 +14,12 @@
     <div class="col-9">
           <%= render "dashboards/search_hashtag" %>
 <!--Happiness score and Chart---------------------------->
+
             <% if @score.present? %>
               <p>Happiness score is:</p>
               <%= render "dashboards/happiness_chart" %>
+              <% else %>
+              <h1>create table to <br> SHOW LAST SEARCHES</h1>
             <% end %>
 
 <!---Save bookmark and Update score ---------->
@@ -30,7 +33,3 @@
     </div>
   </div>
 </div>
-
-<% if @tweets.present? %>
-  <p><%= @tweets %></p>
-<% end %>
