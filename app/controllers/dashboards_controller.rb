@@ -7,6 +7,7 @@ class DashboardsController < ApplicationController
     @user = current_user
     @my_hashtags = @user.hashtags
     # byebug_pry
+  
     if params[:name]
       tweets = call_twitter(params[:name])
       unless tweets.class == String
@@ -20,13 +21,13 @@ class DashboardsController < ApplicationController
 
   TEXTS = []
   def call_twitter(query)
-
     url = "https://api.twitter.com/2/tweets/search/recent?&query=%23#{query}%20-is%3Aretweet%20%20lang%3Aen&max_results=10"
-
     # get request
     response = URI.open(url,
       "Authorization" => "Bearer AAAAAAAAAAAAAAAAAAAAAMjvZgEAAAAAzaTwcexM%2FozUoUW4TZjTDl30cpU%3D7oZ6mAazRU6drDRdUPTLllgfeXxKwl9OXwXjWHdyRuxgK23idR").read
+      # JSON key name for Tweet data array - data
     tweets = JSON.parse(response)["data"]
+
     if tweets.nil?
       redirect_to my_dashboard_path
     else
