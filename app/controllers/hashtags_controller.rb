@@ -16,7 +16,7 @@ class HashtagsController < ApplicationController
       @hashtag.user = current_user
 
         if @hashtag.save
-          redirect_to my_dashboard_path#hashtag_path(@name), notice: 'Hashtag was successfully created.'
+          redirect_to my_dashboard_path
           else
           render :new
         end
