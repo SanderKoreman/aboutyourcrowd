@@ -3,6 +3,8 @@ import { initHashtagIndex } from "./hashtag_index";
 var grabHashtag = () => {
   var hashtags = document.querySelectorAll(".saved-hashtag-card")
   var container = document.querySelector(".output-info")
+  var id = document.querySelector("#hashtagid")
+
 
   hashtags.forEach((hash) => {
     hash.addEventListener('click', () => {
@@ -18,6 +20,7 @@ var grabHashtag = () => {
         <div class="col-6 mt-3 show-card-right">
           <a class="button-secondary link-dashboard-secondary" style="cursor: pointer;" href= "/">Find realtime sentiment</a>
         </div>
+      <a href="/pdf.pdf?id=${id.innerText}">Download PDF</a>
       </div>
       `
     })

@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "prawn"
+
+Prawn::Document.generate("hello.pdf") do
+  text "Hello World!"
+end

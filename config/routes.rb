@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :hashtags, only: [ :index, :show, :create, :destroy, :update]
 
   get '/my-dashboard', to: 'dashboards#my_dashboard', as: :my_dashboard
+  get '/pdf', to: 'dashboards#pdf', as: :pdf
 end

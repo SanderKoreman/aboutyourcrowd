@@ -1,12 +1,11 @@
 require "json"
 require "open-uri"
 require "csv"
+require "prawn"
 
 class DashboardsController < ApplicationController
   def my_dashboard
     @user = current_user
-    @my_hashtags = @user.hashtags
-    # byebug_pry
 
     if params[:name]
       @tweets = ''
@@ -17,6 +16,20 @@ class DashboardsController < ApplicationController
       end
     end
   end
+
+  def pdf
+    @hashtag = Hashtag.find(params[:id])
+
+    respond_to do |format|
+      format.pdf do
+        Prawn::Document.generate("hello.pdf") do
+          text "Hello World!"
+        end
+        # pdf = HashtagPdf.new(@hashtag)
+      end
+    end
+  end
+
 
   private
 
