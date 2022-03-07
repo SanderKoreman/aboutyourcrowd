@@ -19,6 +19,8 @@
               <%= render "dashboards/not_found" %>
             <% elsif @score.present? %>
               <%= render "dashboards/happiness_chart" %>
+            <% elsif @score.present? && @score.nil? %>
+              <%= render "dashboards/no_updates" %>
             <% else %>
               <%= render "dashboards/last_searches" %>
             <% end %>
