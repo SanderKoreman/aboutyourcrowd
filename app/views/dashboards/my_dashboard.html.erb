@@ -18,12 +18,12 @@
             <% if params[:tweets].present? %>
               <%= render "dashboards/not_found" %>
             <% elsif @score.present? %>
-
               <% if @score.nan? %>
                 <%= render "dashboards/no_updates" %>
               <% else %>
                 <%= render "dashboards/happiness_chart" %>
               <% end  %>
+
             <% else %>
               <%= render "dashboards/last_searches" %>
             <% end %>
