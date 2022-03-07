@@ -8,6 +8,8 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import grabHashtag from "../components/hashtag_show";
+import { initHashtagIndex } from "../components/hashtag_index";
+
 
 Rails.start()
 Turbolinks.start()
@@ -17,7 +19,6 @@ import "controllers"
 import "bootstrap"
 
 // 1 CHARTS STAFF
-grabHashtag()
 // Passing score from Ruby
 
 // Create root element
@@ -194,3 +195,9 @@ if(document.getElementById("chartdiv")) {
   chart.svgContainer.autoResize = false;
 
 }
+
+
+document.addEventListener('turbolinks:load', () => {
+  initHashtagIndex();
+  grabHashtag();
+});
