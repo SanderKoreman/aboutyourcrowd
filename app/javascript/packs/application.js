@@ -8,7 +8,6 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import grabHashtag from "../components/hashtag_show";
-import bar from "../components/hashtag_index";
 
 Rails.start()
 Turbolinks.start()
@@ -20,8 +19,6 @@ import "bootstrap"
 // 1 CHARTS STAFF
 grabHashtag()
 // Passing score from Ruby
-
-bar()
 
 // Create root element
 // https://www.amcharts.com/docs/v5/getting-started/#Root_element
