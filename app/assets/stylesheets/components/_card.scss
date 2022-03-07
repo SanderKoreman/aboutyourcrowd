@@ -20,8 +20,6 @@
   border-bottom: 1px solid $lighter-gray;
   &:hover {
     color: $dark-blue;
-    border-left: 2px solid $green;
-    padding: 12px 4px;
   }
 }
 
@@ -91,4 +89,12 @@
   width: 60px;
   height: 60px;
   position: relative;
+}
+
+.show-card-left {
+  border-right: 1px solid $lighter-gray;
+}
+
+.show-hashtag-name {
+  color: $dark-blue;
 }
