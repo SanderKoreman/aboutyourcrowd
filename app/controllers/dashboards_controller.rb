@@ -9,6 +9,7 @@ class DashboardsController < ApplicationController
     # byebug_pry
 
     if params[:name]
+      @tweets = ''
       tweets = call_twitter(params[:name])
       unless tweets.class == String
         @score = retrieve_score(split_texts(tweets))
@@ -29,7 +30,8 @@ class DashboardsController < ApplicationController
     tweets = JSON.parse(response)["data"]
 
     if tweets.nil?
-      redirect_to my_dashboard_path
+      @tweets = false
+      redirect_to my_dashboard_path(tweets: @tweets)
     else
       texts = []
       tweets.each do |hash|
