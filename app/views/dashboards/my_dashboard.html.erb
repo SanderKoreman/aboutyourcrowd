@@ -14,11 +14,16 @@
           <%= render "dashboards/info_field" %>
           <%= render "dashboards/search_hashtag" %>
 <!--Happiness score and Chart---------------------------->
-          <div class="output-info">
+       <div class="output-info">
             <% if params[:tweets].present? %>
               <%= render "dashboards/not_found" %>
             <% elsif @score.present? %>
-              <%= render "dashboards/happiness_chart" %>
+
+              <% if @score.nan? %>
+                <%= render "dashboards/no_updates" %>
+              <% else %>
+                <%= render "dashboards/happiness_chart" %>
+              <% end  %>
             <% else %>
               <%= render "dashboards/last_searches" %>
             <% end %>
