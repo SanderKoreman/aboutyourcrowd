@@ -10,7 +10,7 @@ var grabHashtag = () => {
       // container.innerText = hash.hashtag
       container.innerHTML = `
       <div>
-        <div class="bg bg-light" id="name"><h5>${name.innerText}</h5></div>
+        <div class="bg bg-light mt-3" id="name"><h2>${name.innerText}</h2></div>
         <div class="bg bg-light" id="date"><strong>Searched on</strong> ${date.innerText}</div>
         <div class="bg bg-light" id="score"><strong>Score is</strong> ${score.innerText}</div>
       </div>
