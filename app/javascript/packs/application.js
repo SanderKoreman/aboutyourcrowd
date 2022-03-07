@@ -16,7 +16,7 @@ ActiveStorage.start()
 import "controllers"
 import "bootstrap"
 
-// CHARTS STAFF
+// 1 CHARTS STAFF
 grabHashtag()
 // Passing score from Ruby
 
@@ -151,6 +151,8 @@ if(document.getElementById("chartdiv")) {
 
   chart.bulletsContainer.set("mask", undefined);
 
+
+
   var colorSet = am5.ColorSet.new(root, {});
   /* TUT */
   var axisRange0 = xAxis.createAxisRange(
@@ -189,4 +191,6 @@ if(document.getElementById("chartdiv")) {
 
   // Make stuff animate on load
   chart.appear(1000, 9);
+  chart.svgContainer.autoResize = false;
+
 }
