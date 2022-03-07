@@ -65,3 +65,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # added for storing API keys
 gem 'dotenv-rails', groups: [:development, :test]
+
+
