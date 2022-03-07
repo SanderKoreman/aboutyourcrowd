@@ -1,26 +1,26 @@
 <div class="container dashboard mt-4">
   <div class="row">
     <div class="col-3 d-flex column justify-content-between">
+<!--Dashboard LEFT Side Username and my hashtags ------>
       <div>
         <a href="/my-dashboard"><%= image_tag "logo5.png", class: "logo" %></a>
         <h6 class="mt-4 username"><%= @user.name  %></h4>
-<!--Dashboard LEFT Side Username and my hashtags ---------------------------->
         <%= render "dashboards/my_hashtags" %>
       </div>
       <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button-secondary link-dashboard-secondary" %>
     </div>
 <!--Dashboard RIGHT Side---------------------------->
     <div class="col-9">
+          <%= render "dashboards/info_field" %>
           <%= render "dashboards/search_hashtag" %>
 <!--Happiness score and Chart---------------------------->
-
             <% if @score.present? %>
               <div class="output-info">
-                <p>Happiness score is:</p>
                 <%= render "dashboards/happiness_chart" %>
-              </div>
             <% else %>
-              <div class="output-info"><%= render "dashboards/last_searches" %></div>
+              <div class="output-info">
+                <%= render "dashboards/last_searches" %>
+              </div>
             <% end %>
 
 <!---Save bookmark and Update score ---------->

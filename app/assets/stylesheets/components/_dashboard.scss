@@ -4,7 +4,7 @@
   box-sizing: border-box;
   border-radius: $border-radius-dashboard;
   margin-bottom: 12px;
-  // height: 85vh;
+  height: 85vh;
   overflow: hidden;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .col-9 {
-  padding: 18px;
+  padding: 30px;
   border-left: 1px solid $lighter-gray;
   background-color: rgb(252, 252, 252);
   height: 85vh;
@@ -24,7 +24,7 @@
 }
 
 .col-3 {
-  padding: 18px;
+  padding: 30px;
   display: flex;
   flex-direction: column
 }
