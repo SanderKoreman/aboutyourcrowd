@@ -68,3 +68,4 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 
 gem 'prawn'
+gem 'prawn-table'
