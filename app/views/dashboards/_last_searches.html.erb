@@ -1,12 +1,14 @@
 <h2>Welcome back, <%= current_user.name %>!</h2>
-<h4 style="color: gray">Last searches</h4>
+<h4 style="color: gray">These were your last searches</h4>
 <ul class="last-searched-list">
   <% @my_hashtags.order(updated_at: :desc).each do |hashtag| %>
     <li class="last-searched-card">
       <p class="last-searched-initial"><%= hashtag.name[0].capitalize %></p>
       <%= link_to "##{hashtag.name.capitalize}" %>
-      <p class="last-searched-score">(the most recent score was <strong><%= hashtag.score %></strong>
-      on <%= hashtag.updated_at.strftime("%e %B %Y at %H:%M") %>)</p>
+      <%= hashtag.score %>
     </li>
   <% end %>
   </ul>
+
+<%# <p class="last-searched-score">(the most recent score was <strong><%= hashtag.score %></strong>
+      <%# on <%= hashtag.updated_at.strftime("%e %B %Y at %H:%M") %></p>
