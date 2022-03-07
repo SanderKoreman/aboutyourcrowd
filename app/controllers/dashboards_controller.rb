@@ -7,7 +7,7 @@ class DashboardsController < ApplicationController
     @user = current_user
     @my_hashtags = @user.hashtags
     # byebug_pry
-  
+
     if params[:name]
       tweets = call_twitter(params[:name])
       unless tweets.class == String
