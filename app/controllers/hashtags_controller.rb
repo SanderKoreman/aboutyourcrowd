@@ -12,6 +12,7 @@ class HashtagsController < ApplicationController
       Hashtag.find_by(name: params[:name]).update(score: params[:score])
       redirect_to my_dashboard_path
       else
+
       @hashtag = Hashtag.new(name: params[:name], score: params[:score])
       @hashtag.user = current_user
 
