@@ -37,7 +37,7 @@ class DashboardsController < ApplicationController
 
   TEXTS = []
   def call_twitter(query)
-    url = "https://api.twitter.com/2/tweets/search/recent?&query=%23#{query}%20-is%3Aretweet%20%20lang%3Aen&max_results=10"
+    url = "https://api.twitter.com/2/tweets/search/recent?&query=%23#{query}%20-is%3Aretweet%20%20lang%3Aen&max_results=100"
     # get request
     response = URI.open(url,
       "Authorization" => "Bearer AAAAAAAAAAAAAAAAAAAAAMjvZgEAAAAAzaTwcexM%2FozUoUW4TZjTDl30cpU%3D7oZ6mAazRU6drDRdUPTLllgfeXxKwl9OXwXjWHdyRuxgK23idR").read
@@ -67,34 +67,24 @@ class DashboardsController < ApplicationController
   end
 
   def retrieve_score(words)
-    # csv = "lib/assets/Hedonometer.csv"
-
-    # # response = File.open(csv)
     scores = []
-    # words.each { |word|
-    #   CSV.foreach(csv, :headers => :first_row) do |row|
-    #     scores << row["Happiness Score"].to_f if row["Word"] == word
-    #   end
-    # }
-    # sum = 0.0
-    # scores.each { |num|
-    #   sum += num
-    # }
-    # sum = (sum / scores.count)
-    # return sum.round(1)
-    table = CSV.table('lib/assets/Hedonometer.csv')
-
-    table.sort_by{|s| s[:word]}
-
     words.each do |word|
-      # selected_by_letter = []
-      table.each do |entry|
-        if entry[:word] == word
-          scores << entry[:happiness_score]
+      if ('a'..'z').include?(word[0])
+        # table = CSV.table("lib/assets/#{word[0]}.csv")
+        csv = "lib/assets/#{word[0]}.csv"
+        # selected_by_letter = []
+        # wordles << word
+        # table.each do |entry|
+        #   if entry[:word] == word
+        #     scores << entry[:happiness_score]
+        #     next
+        #   end
+        # end
+        CSV.foreach(csv, :headers => :first_row) do |row|
+          scores << row["Happiness Score"].to_f if row["Word"] == word
         end
       end
     end
-
 
     sum = 0.0
       scores.each { |num|
