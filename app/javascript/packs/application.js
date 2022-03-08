@@ -64,7 +64,7 @@ if(document.getElementById("chartdiv")) {
     am5xy.ValueAxis.new(root, {
       maxDeviation: 0,
       min: 0,
-      max: 9,
+      max: 10,
       strictMinMax: true,
       renderer: axisRenderer
     })
@@ -160,7 +160,7 @@ if(document.getElementById("chartdiv")) {
     xAxis.makeDataItem({
       above: true,
       value: score,
-      endValue: 9
+      endValue: 10
     })
   );
 

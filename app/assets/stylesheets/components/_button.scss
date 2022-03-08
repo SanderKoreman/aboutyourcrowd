@@ -76,9 +76,9 @@
 }
 
 
-.button-yellow {
+.button-red {
   appearance: button;
-  background-color: $yellow;
+  background-color: rgb(202, 104, 104);
   background-image: none;
   border: none;
   border-radius: 4px;
@@ -102,12 +102,12 @@
   white-space: nowrap;
 }
 
-.button-yellow:hover {
+.button-red:hover {
   text-decoration: none;
   color: white;
 }
 
-.link-dashboard-yellow {
+.link-dashboard-red {
   appearance: none !important;
   box-shadow: white 4px 4px 0 0,$green 4px 4px 0 1px !important;
 }
