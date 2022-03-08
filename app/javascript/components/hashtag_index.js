@@ -3,7 +3,7 @@ const initHashtagIndex = () => {
   var ProgressBar = require('progressbar.js');
 
   document.querySelectorAll('.chart-container').forEach((container) => {
-console.log(container)
+
     var bar = new ProgressBar.Circle(container, {
       color: '#8BBEB2',
       // This has to be the same size as the maximum width to
@@ -21,8 +21,7 @@ console.log(container)
       step: function(state, circle) {
         circle.path.setAttribute('stroke', state.color);
         circle.path.setAttribute('stroke-width', state.width);
-
-        var value = Math.round(circle.value() * 10);
+        var value = container.dataset.score;
         if (value === 0) {
           circle.setText('');
         } else {
@@ -33,7 +32,7 @@ console.log(container)
     });
     bar.text.style.fontFamily = '"Roboto", Helvetica, sans-serif';
     bar.text.style.fontSize = '1rem';
-    console.log(container.dataset.score);
+    // console.log(container.dataset.score);
     bar.animate((container.dataset.score) / 10);  // Number from 0.0 to 1.0
   })
 }

@@ -18,9 +18,9 @@
     <% @my_hashtags.order(updated_at: :desc).each do |hashtag| %>
       <li class="last-searched-card">
         <p class="last-searched-initial"><%= hashtag.name[0].capitalize %></p>
-        <%= link_to "##{hashtag.name.capitalize}", class: "last-searched-hashtag-name" %>
+        <div class="last-searched-hashtag-name"><%= hashtag.name.capitalize%></div>
         <p class="last-searched-score">last searched on<%= hashtag.updated_at.strftime("%e %B %Y at %H:%M")%></p>
-        <div class="chart-container" data-score="<%= hashtag.score %>"></div>
+        <div class="chart-container" data-score = "<%= hashtag.score %>"></div>
       </li>
     <% end %>
   </ul>

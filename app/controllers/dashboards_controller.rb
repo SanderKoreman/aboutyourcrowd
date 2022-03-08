@@ -11,7 +11,7 @@ class DashboardsController < ApplicationController
     @user = current_user
     @my_hashtags = @user.hashtags
 
-    if params[:name]
+    if params[:name] && params[:name] != ''
       @tweets = ''
       tweets = call_twitter(params[:name])
       unless tweets.class == String
