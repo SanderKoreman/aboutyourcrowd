@@ -74,3 +74,40 @@
   text-decoration: none;
   color: white;
 }
+
+
+.button-yellow {
+  appearance: button;
+  background-color: $yellow;
+  background-image: none;
+  border: none;
+  border-radius: 4px;
+  box-shadow: $white 4px 4px 0 0,$white 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: $white;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  margin: 0 5px 3px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: none;
+  text-decoration: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.button-yellow:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.link-dashboard-yellow {
+  appearance: none !important;
+  box-shadow: white 4px 4px 0 0,$green 4px 4px 0 1px !important;
+}
