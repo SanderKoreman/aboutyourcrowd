@@ -67,6 +67,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # added for storing API keys
 gem 'dotenv-rails', groups: [:development, :test]
 
-
+# added for PDF 1st option
 gem 'prawn'
 gem 'prawn-table'
+# added for PDF 2nd option
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'

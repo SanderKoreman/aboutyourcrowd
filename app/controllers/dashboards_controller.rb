@@ -3,6 +3,8 @@ require "open-uri"
 require "csv"
 require "prawn"
 require "prawn/table"
+require 'wicked_pdf'
+# require 'wkhtmltopdf-binary'
 
 class DashboardsController < ApplicationController
   def my_dashboard
@@ -17,20 +19,22 @@ class DashboardsController < ApplicationController
         @hashtag = params[:name]
       end
     end
+
+  
   end
 
-  def printpdf
-    @user = current_user
-    @my_hashtags = @user.hashtags
-    # raise
-    respond_to do |format|
-      format.html #printpdf.html.erb
-      format.pdf do
-        pdf = HashtagPdf.new(@my_hashtags)
-        send_data pdf.render
-      end
-    end
-  end
+  # def printpdf
+  #   @user = current_user
+  #   @my_hashtags = @user.hashtags
+  #   # raise
+  #   respond_to do |format|
+  #     format.html #printpdf.html.erb
+  #     format.pdf do
+  #       pdf = HashtagPdf.new(@my_hashtags)
+  #       send_data pdf.render
+  #     end
+  #   end
+  # end
 
 
   private
