@@ -67,22 +67,61 @@ class DashboardsController < ApplicationController
   end
 
   def retrieve_score(words)
-    csv = "lib/assets/Hedonometer.csv"
+    # csv = "lib/assets/Hedonometer.csv"
 
-    # response = File.open(csv)
+    # # response = File.open(csv)
     scores = []
-    words.each {|word|
-      CSV.foreach(csv, :headers => :first_row) do |row|
-      scores << row["Happiness Score"].to_f if row["Word"] == word
+    # words.each { |word|
+    #   CSV.foreach(csv, :headers => :first_row) do |row|
+    #     scores << row["Happiness Score"].to_f if row["Word"] == word
+    #   end
+    # }
+    # sum = 0.0
+    # scores.each { |num|
+    #   sum += num
+    # }
+    # sum = (sum / scores.count)
+    # return sum.round(1)
+    table = CSV.table('lib/assets/Hedonometer.csv')
+
+    table.sort_by{|s| s[:word]}
+
+    words.each do |word|
+      # selected_by_letter = []
+      table.each do |entry|
+        if entry[:word] == word
+          scores << entry[:happiness_score]
+        end
+      end
     end
-    }
+
+
     sum = 0.0
-    scores.each { |num|
-      sum += num
-    }
-    sum = (sum / scores.count)
-    return sum.round(1)
+      scores.each { |num|
+        sum += num
+      }
+      sum = (sum / scores.count)
+      return sum.round(1)
   end
 end
 
-# words.each {|word| CSV.foreach(csv, headers: :first_row) do |row|
+# def retrieve_score(words)
+#   csv = "lib/assets/Hedonometer.csv"
+
+#   # response = File.open(csv)
+#   scores = []
+#   words.each { |word|
+#     if words.size >= 1000
+#       scores = FasterCSV.parse(words.join) rescue next
+#     end
+#     IO.foreach(csv, :headers => :first_row) do |row|
+#       scores << row["Happiness Score"].to_f if row["Word"] == word
+#     end
+#   }
+#   sum = 0.0
+#   scores.each { |num|
+#     sum += num
+#   }
+#   sum = (sum / scores.count)
+#   return sum.round(1)
+# end
