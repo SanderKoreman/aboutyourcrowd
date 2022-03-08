@@ -13,7 +13,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <!--PDF STUFF-->
 
-    <%= wicked_pdf_stylesheet_link_tag "application" %>
+    <%#= wicked_pdf_stylesheet_link_tag "application" %>
     <%#= wicked_pdf_javascript_include_tag "number_pages" %>
   </head>
 
@@ -22,7 +22,7 @@
     <%= render 'shared/flashes' %>
 <!--wicked PDF STUFF d="header" -->
     <div id="header" >
-      <%= wicked_pdf_image_tag 'mysite.jpg' %>
+      <%#= wicked_pdf_image_tag 'mysite.jpg' %>
     </div>
     <div id="content">
       <%= yield %>
