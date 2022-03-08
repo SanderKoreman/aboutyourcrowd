@@ -20,7 +20,7 @@
         <p class="last-searched-initial"><%= hashtag.name[0].capitalize %></p>
         <%= link_to "##{hashtag.name.capitalize}", class: "last-searched-hashtag-name" %>
         <p class="last-searched-score">last searched on<%= hashtag.updated_at.strftime("%e %B %Y at %H:%M")%></p>
-        <div class="chart-container" data-score="<%= hashtag.score %>"></div>
+        <div class="chart-container" data-score = "<%= hashtag.score %>"></div>
       </li>
     <% end %>
   </ul>

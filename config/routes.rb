@@ -11,5 +11,5 @@ Rails.application.routes.draw do
 
   get '/my-dashboard', to: 'dashboards#my_dashboard', as: :my_dashboard
 
-  get '/pdf', to: 'dashboards#printpdf', as: :printpdf
+  # get '/pdf', to: 'dashboards#printpdf', as: :printpdf
 end

@@ -18,13 +18,12 @@
     <!--Prawn---------------------------->
       <%# <%= link_to "PDF file", pdf_path(format: "pdf") %>
 
-
           <%= render "dashboards/info_field" %>
           <%= render "dashboards/search_hashtag" %>
 <!--Happiness score and Chart---------------------------->
        <div class="output-info">
 
-            <% if params[:tweets].present? %>
+            <% if params[:tweets].present? && params[:name] == "" %>
               <%= render "dashboards/not_found" %>
             <% elsif @score.present? %>
               <% if @score.nan? %>
