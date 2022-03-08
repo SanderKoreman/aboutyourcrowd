@@ -1,5 +1,94 @@
-.danko{
-  color: red;
-  background-color: yellow;
-  margin-top: 300px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+.container {
+  font-family: Roboto;
+}
+
+.pdf-h1 {
+  font-weight: 900;
+  font-size: 80px;
+}
+
+.pdf-last-searched-list {
+  border: 1px solid $lighter-gray;
+  border-radius: $border-radius-sm;
+}
+
+.pdf-last-searched-card {
+  text-align: justify;
+  list-style-type: none;
+  // list-style-position: inside;
+  border-bottom: 1px solid $lighter-gray;
+  padding: 6px 12px;
+  margin-left: -42px;
+}
+
+.pdf-last-searched-card:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+
+.pdf-last-searched-card:last-child {
+  border-bottom: none;
+}
+
+.pdf-last-searched-initial {
+  display: inline-block;
+  background-color: $green;
+  font-size: 55px;
+  font-weight: 900;
+  text-align: center;
+  color: white;
+  height: 60px;
+  width: 60px;
+  border-radius: $border-radius-sm;
+  margin-right: 12px;
+}
+
+.pdf-last-searched-hashtag-name {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  font-weight: 900;
+  margin-right: 12px;
+  font-size: 24px;
+}
+
+.pdf-last-searched-date {
+  display: inline-block;
+  color: $light-gray;
+  margin-right: 12px;
+  font-size: 24px;
+}
+
+.pdf-last-searched-score {
+  display: inline-block;
+  background-color: $green;
+  font-size: 55px;
+  font-weight: 900;
+  text-align: center;
+  color: white;
+  height: 60px;
+  width: 85px;
+  border-radius: $border-radius-sm;
+}
+
+.pdf-h3 {
+  color: $green;
+}
+
+.pdf-image {
+  width: 100px;
+  height: 100px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
