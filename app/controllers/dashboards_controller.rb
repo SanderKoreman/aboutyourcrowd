@@ -2,6 +2,7 @@ require "json"
 require "open-uri"
 require "csv"
 require "prawn"
+require "prawn/table"
 
 class DashboardsController < ApplicationController
   def my_dashboard
@@ -18,15 +19,15 @@ class DashboardsController < ApplicationController
     end
   end
 
-  def pdf
-    @hashtag = Hashtag.find(params[:id])
-
+  def printpdf
+    @user = current_user
+    @my_hashtags = @user.hashtags
+    # raise
     respond_to do |format|
+      format.html #printpdf.html.erb
       format.pdf do
-        Prawn::Document.generate("hello.pdf") do
-          text "Hello World!"
-        end
-        # pdf = HashtagPdf.new(@hashtag)
+        pdf = HashtagPdf.new(@my_hashtags)
+        send_data pdf.render
       end
     end
   end
