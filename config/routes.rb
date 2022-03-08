@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "uikit", to: "pages#uikit"
   get "test", to: "pages#test"
+  get "/print", to: "printing#print"
 
   resources :users, only: [ :edit, :update ]
 

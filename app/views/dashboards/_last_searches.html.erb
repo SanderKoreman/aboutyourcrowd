@@ -8,9 +8,11 @@
 <% else %>
   <h4 class= "mt-4">Welcome back, <%= current_user.name %>!</h4>
   <p style="color: gray">Last searches</p>
-  <%=
-  link_to "Print last searches", printpdf_path(format: "pdf")
-%>
+
+      <!--Wicked pdf---------------------------->
+      <%= link_to "Print PDF!!!!", print_path(format: :pdf) %>
+      <!--Prawn pdf---------------------------->
+  <%#=link_to "Print last searches", printpdf_path(format: "pdf")%>
 
   <ul class="last-searched-list">
     <% @my_hashtags.order(updated_at: :desc).each do |hashtag| %>

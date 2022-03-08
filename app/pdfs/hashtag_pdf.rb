@@ -1,11 +1,13 @@
 class HashtagPdf < Prawn::Document
   def initialize(my_hashtags)
     super(top_margin: 170)
+
     @my_hashtags = my_hashtags
     hashtags_info
   end
 
   def hashtags_info
+
     text "Hashtags info", size: 30, style: :bold
     header = ["ID", "Name", "Score", "Updated at"]
     table_data = []

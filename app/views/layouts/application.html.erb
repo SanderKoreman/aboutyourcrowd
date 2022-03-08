@@ -11,12 +11,22 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <!--PDF STUFF-->
+
+    <%= wicked_pdf_stylesheet_link_tag "pdf" %>
+    <%= wicked_pdf_javascript_include_tag "number_pages" %>
   </head>
 
-  <body>
+<!--wicked PDF STUFF onload='number_pages' AND id="header", id="content"-->
+  <body onload='number_pages'>
     <%= render 'shared/flashes' %>
-    <%= yield %>
-
+<!--wicked PDF STUFF d="header" -->
+    <div id="header" style="background-color: black">
+      <%= wicked_pdf_image_tag 'mysite.jpg' %>
+    </div>
+    <div id="content">
+      <%= yield %>
+    </div>
       <!--CHART STUFF-->
     <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>

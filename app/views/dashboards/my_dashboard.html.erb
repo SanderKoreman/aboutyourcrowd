@@ -3,6 +3,9 @@
     <div class="col-3 d-flex column justify-content-between">
 <!--Dashboard LEFT Side Username and my hashtags ------>
 
+
+<!--routes custom controller action-view---------------------------->
+
       <div>
         <a href="/my-dashboard"><%= image_tag "logo5.png", class: "logo" %></a>
         <h6 class="mt-4 username">Logged in as <%= @user.name  %></h4>
@@ -12,7 +15,9 @@
     </div>
 <!--Dashboard RIGHT Side---------------------------->
     <div class="col-9">
+    <!--Prawn---------------------------->
       <%# <%= link_to "PDF file", pdf_path(format: "pdf") %>
+
 
           <%= render "dashboards/info_field" %>
           <%= render "dashboards/search_hashtag" %>
