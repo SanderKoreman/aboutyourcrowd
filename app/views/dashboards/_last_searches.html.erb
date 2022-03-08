@@ -1,12 +1,12 @@
 
 <% if @my_hashtags.empty? %>
 <div class= "d-flex flex-column align-items-center">
-    <h5 class="mt-5">Welcome, <%= current_user.name %>!</h5>
+    <h4 class="mt-5">Welcome, <%= current_user.name %>!</h4>
     <p>Tap into what’s happening to build what’s next</p>
     <div class="search-image" style="width: 320px; height: 320px;"></div>
 </div>
 <% else %>
-  <h5 class= "mt-4">Welcome back, <%= current_user.name %>!</h5>
+  <h4 class= "mt-4">Welcome back, <%= current_user.name %>!</h4>
   <p style="color: gray">Last searches</p>
   <%=
   link_to "Print last searches", printpdf_path(format: "pdf")
@@ -16,8 +16,8 @@
     <% @my_hashtags.order(updated_at: :desc).each do |hashtag| %>
       <li class="last-searched-card">
         <p class="last-searched-initial"><%= hashtag.name[0].capitalize %></p>
-        <%= link_to "##{hashtag.name.capitalize}" %>
-        <p class="last-searched-score">searched on<%= hashtag.updated_at.strftime("%e %B %Y at %H:%M") %></p>
+        <%= link_to "##{hashtag.name.capitalize}", class: "last-searched-hashtag-name" %>
+        <p class="last-searched-score">last searched on<%= hashtag.updated_at.strftime("%e %B %Y at %H:%M")%></p>
         <div class="chart-container" data-score="<%= hashtag.score %>"></div>
       </li>
     <% end %>

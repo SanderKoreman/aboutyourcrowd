@@ -13,11 +13,13 @@ var grabHashtag = () => {
       container.innerHTML = `
       <div class="row show-hashtag-row">
         <div class="show-hashtag-name mt-3" id="name"><h2>${hash.querySelector("#hashtagname").innerText}</h2></div>
-        <div class="col-6 mt-3 show-card-left">
+        <div class="col-6 mt-3 show-card-left text-center">
           <div class="p-0" id="date">On ${hash.querySelector("#hashtagdate").innerText} the score was</div>
           <div class="p-0" id="score">${hash.querySelector("#hashtagscore").innerText}</div>
         </div>
-        <div class="col-6 mt-3 show-card-right">
+        <div class="col-6 mt-3 show-card-right text-center">
+          <p>At this very moment the score is</p>
+          <div class="p-0" id="score">5.6</div>
           <a class="button-secondary link-dashboard-secondary" style="cursor: pointer;" href= "/">Find realtime sentiment</a>
         </div>
       <a href="/pdf.pdf?id=${id.innerText}">Download PDF</a>

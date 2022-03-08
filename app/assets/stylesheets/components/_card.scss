@@ -40,6 +40,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   padding: 20px;
   text-decoration: none;
   background-color: white;
@@ -58,16 +59,20 @@
   margin-bottom: 0;
 }
 
+.last-searched-card div:last-child {
+  margin-left: auto;
+}
+
 .last-searched-score {
-  margin-left: 12px;
   margin-right: 12px;
+  margin-left: 2px;
   margin-bottom: 0rem;
-  color: $gray;
+  color: $light-gray;
 }
 
 .last-searched-initial {
   background-color: $green;
-  font-size: 55px;
+  font-size: 45px;
   font-weight: 700;
   text-align: center;
   color: white;
@@ -75,10 +80,10 @@
   width: 60px;
   border-radius: $border-radius-sm;
   margin-right: 12px;
-  margin-bottom: auto;
 }
 
 .last-searched-card a {
+  font-size: 20px;
   font-weight: 700;
   text-decoration: none;
   color: $dark-blue;
@@ -93,6 +98,10 @@
 
 .show-card-left {
   border-right: 1px solid $lighter-gray;
+}
+
+.show-card-right p {
+  color: $light-gray;
 }
 
 .show-hashtag-name {
