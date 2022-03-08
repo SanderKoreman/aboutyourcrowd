@@ -4,10 +4,9 @@ class PrintingController < ApplicationController
     @user = current_user
     @my_hashtags = @user.hashtags
     respond_to do |format|
-
       format.html
       format.pdf do
-        render pdf: "recentsearches", template: "printing/print.html.erb", layout: "pdf.html"
+        render pdf: "recentsearches", template: "printing/print.html.erb", layout: "pdf.html.erb", encoding: "UTF-8"
       end
     end
   end
