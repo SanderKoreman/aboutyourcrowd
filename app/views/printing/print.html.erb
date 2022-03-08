@@ -1,20 +1,16 @@
-<p class="danko">Print pdf for all hashtags</p>
+<div class="container">
+  <%= image_tag image_url('logo5.png'), class: "pdf-image center" %>
+  <h1 class="pdf-h1">Hashtag report</h1>
+  <h3 class="pdf-h3">Printed on <%= Time.now.strftime("%e %B %Y (%H:%M)") %> by <%= current_user.name %></h3>
 
-<% if !@my_hashtags.empty? %>
-
-  <h4 class= "mt-4">Report is ready, <%= current_user.name %>!</h4>
-  <p style="color: gray">Last searches</p>
-
-  <%=link_to "Print last searches", printpdf_path(format: "pdf")%>
-
-  <ul class="last-searched-list">
-    <% @my_hashtags.order(updated_at: :desc).each do |hashtag| %>
-      <li class="last-searched-card">
-        <p class="last-searched-initial"><%= hashtag.name[0].capitalize %></p>
-        <%= link_to "##{hashtag.name.capitalize}", class: "last-searched-hashtag-name" %>
-        <p class="last-searched-score">last searched on<%= hashtag.updated_at.strftime("%e %B %Y at %H:%M")%></p>
-        <div class="chart-container" data-score="<%= hashtag.score %>"></div>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+    <ul class="pdf-last-searched-list">
+      <% @my_hashtags.order(updated_at: :desc).each do |hashtag| %>
+        <li class="pdf-last-searched-card">
+          <p class="pdf-last-searched-initial"><%= hashtag.name[0].capitalize %></p>
+          <p class="pdf-last-searched-hashtag-name"><%= "##{hashtag.name.capitalize}" %></p>
+          <p class="pdf-last-searched-date">last searched on<%= hashtag.updated_at.strftime("%e %B %Y at %H:%M")%></p>
+          <p class="pdf-last-searched-score"><%= hashtag.score %></p>
+        </li>
+      <% end %>
+    </ul>
+</div>
