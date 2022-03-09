@@ -13,7 +13,7 @@ class PrintingController < ApplicationController
 
   def printshow
     @user = current_user
-    @hashtag = Hashtag.find([])
+    @hashtag = Hashtag.find(params[:id])
     respond_to do |format|
       format.html
       format.pdf do
@@ -21,5 +21,4 @@ class PrintingController < ApplicationController
       end
     end
   end
-
 end
