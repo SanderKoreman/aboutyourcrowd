@@ -9,17 +9,15 @@
   <h4 class= "mt-4">Welcome back, <%= current_user.name %>!</h4>
   <p style="color: gray">Last searches</p>
 
-      <!--Wicked pdf---------------------------->
-      <%= link_to "Save as PDF", print_path(format: :pdf), class: "button-primary link-dashboard-primary" %>
-
-  <ul class="last-searched-list">
-    <% @my_hashtags.order(updated_at: :desc).each do |hashtag| %>
-      <li class="last-searched-card">
-        <p class="last-searched-initial"><%= hashtag.name[0].capitalize %></p>
-        <div class="last-searched-hashtag-name"><%= hashtag.name.capitalize%></div>
-        <p class="last-searched-score">last searched on<%= hashtag.updated_at.strftime("%e %B %Y at %H:%M")%></p>
-        <div class="chart-container" data-score = "<%= hashtag.score %>"></div>
-      </li>
-    <% end %>
-  </ul>
+    <ul class="last-searched-list">
+      <% @my_hashtags.order(updated_at: :desc).each do |hashtag| %>
+        <li class="last-searched-card">
+          <div class="initial-wrapper"><p class="last-searched-initial"><%= hashtag.name[0].capitalize %></p></div>
+          <div class="last-searched-hashtag-name"><%= hashtag.name.capitalize%></div>
+          <p class="last-searched-score">last searched on<%= hashtag.updated_at.strftime("%e %B %Y at %H:%M")%></p>
+          <div class="chart-container" data-score = "<%= hashtag.score %>"></div>
+        </li>
+      <% end %>
+    </ul>
+    <%= link_to "Save as PDF", print_path(format: :pdf), class: "button-primary link-dashboard-primary" %>
 <% end %>

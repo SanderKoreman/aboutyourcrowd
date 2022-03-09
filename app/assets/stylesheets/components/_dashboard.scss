@@ -3,8 +3,8 @@
   box-shadow: $light-blue 10px 10px 0 0,$green 10px 10px 0 2px;
   box-sizing: border-box;
   border-radius: $border-radius-dashboard;
-  margin-bottom: 12px;
-  height: 85vh;
+  margin: 12px auto;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -21,8 +21,8 @@
   background-color: rgb(252, 252, 252);
   border-top-right-radius: $border-radius-dashboard;
   border-bottom-right-radius: $border-radius-dashboard;
-  height: 85vh;
-  overflow: auto;
+  // height: 100%;
+  // overflow: hidden;
 }
 
 .col-3 {
