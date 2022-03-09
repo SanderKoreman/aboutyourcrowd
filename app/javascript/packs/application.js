@@ -18,14 +18,15 @@ ActiveStorage.start()
 import "controllers"
 import "bootstrap"
 
-// 1 CHARTS STAFF
-// Passing score from Ruby
+// GAUGE CHART STAFF- HAPPINESS CHART MAIN
 
-// Create root element
+
 // https://www.amcharts.com/docs/v5/getting-started/#Root_element
 if(document.getElementById("chartdiv")) {
 
+  // Passing score from Ruby
   var score = document.getElementById("chartdiv").getAttribute("data-score");
+  // Create root element
   var root = am5.Root.new("chartdiv");
 
 
@@ -201,3 +202,4 @@ document.addEventListener('turbolinks:load', () => {
   initHashtagIndex();
   grabHashtag();
 });
+
