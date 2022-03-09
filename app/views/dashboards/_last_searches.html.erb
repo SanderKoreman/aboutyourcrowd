@@ -2,7 +2,7 @@
 <% if @my_hashtags.empty? %>
 <div class= "d-flex flex-column align-items-center">
     <h4 class="mt-5">Welcome, <%= current_user.name %>!</h4>
-    <p>Tap into what’s happening to build what’s next</p>
+    <p>Don't wait any longer! About Your Crowd is ready to help you finding the mood on your hashtag.</p>
     <div class="search-image" style="width: 320px; height: 320px;"></div>
 </div>
 <% else %>
@@ -10,9 +10,7 @@
   <p style="color: gray">Last searches</p>
 
       <!--Wicked pdf---------------------------->
-      <%= link_to "Print PDF!!!!", print_path(format: :pdf) %>
-      <!--Prawn pdf---------------------------->
-  <%#=link_to "Print last searches", printpdf_path(format: "pdf")%>
+      <%= link_to "Save as PDF", print_path(format: :pdf), class: "button-primary link-dashboard-primary" %>
 
   <ul class="last-searched-list">
     <% @my_hashtags.order(updated_at: :desc).each do |hashtag| %>
