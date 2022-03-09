@@ -22,15 +22,16 @@
           <%= render "dashboards/search_hashtag" %>
 <!--Happiness score and Chart---------------------------->
        <div class="output-info">
-
-            <% if params[:tweets].present? && params[:name] == "" %>
+            <% if params[:name] == "" %>
+              <%= render "dashboards/not_found" %>
+            <% elsif params[:tweets] == "false" %>
               <%= render "dashboards/not_found" %>
             <% elsif @score.present? %>
-              <% if @score.nan? %>
-                <%= render "dashboards/no_updates" %>
-              <% else %>
-                <%= render "dashboards/happiness_chart" %>
-              <% end  %>
+                <% if @score.nan? %>
+                  <%= render "dashboards/no_updates" %>
+                  <% else %>
+                  <%= render "dashboards/happiness_chart" %>
+                <% end  %>
             <% else %>
               <%= render "dashboards/last_searches" %>
             <% end %>
@@ -41,13 +42,14 @@
             <% if Hashtag.find_by(name: @hashtag) %>
 
               <% if Hashtag.find_by(name: @hashtag).user == current_user%>
-                 <%= link_to "Update ##{params[:name].capitalize}", hashtags_path(name: @hashtag, score: @score), class: "button-secondary link-dashboard-secondary", method: :post  %>
+                 <%= link_to "Update ##{params[:name].capitalize}", hashtags_path(name: @hashtag, score: @score, happywords: @happy_words, sadwords: @sad_words), class: "button-secondary link-dashboard-secondary", method: :post  %>
                  <% else %>
-                  <%= link_to "Bookmark ##{params[:name].capitalize}", hashtags_path(name: @hashtag, score: @score), class: "button-secondary link-dashboard-secondary", method: :post  %>
+
+                  <%#= link_to "Bookmark ##{params[:name].capitalize}", hashtags_path(name: @hashtag, score: @score, happywords: @happy_words, sadwords: @sad_words), class: "button-secondary link-dashboard-secondary", method: :post  %>
               <% end %>
             <% else %>
 
-              <%= link_to "Bookmark ##{params[:name].capitalize}", hashtags_path(name: @hashtag, score: @score), class: "button-secondary link-dashboard-secondary", method: :post  %>
+              <%= link_to "Bookmark ##{params[:name].capitalize}", hashtags_path(name: @hashtag, score: @score, happywords: @happy_words, sadwords: @sad_words), class: "button-secondary link-dashboard-secondary", method: :post  %>
             <% end %>
           <% end %>
     </div>
