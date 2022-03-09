@@ -21,12 +21,6 @@ class DashboardsController < ApplicationController
       end
     end
 
-    respond_to do |format|
-      format.html
-      format.pdf do
-        render pdf: "recentsearchess", template: "dashboards/my_dashboard.html.erb", layout: "application.html.erb", encoding: "UTF-8"
-      end
-    end
   end
 
   # def printpdf
