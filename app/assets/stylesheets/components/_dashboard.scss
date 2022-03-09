@@ -19,8 +19,10 @@
   padding: 30px;
   border-left: 1px solid $lighter-gray;
   background-color: rgb(252, 252, 252);
+  border-top-right-radius: $border-radius-dashboard;
+  border-bottom-right-radius: $border-radius-dashboard;
   height: 85vh;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .col-3 {
