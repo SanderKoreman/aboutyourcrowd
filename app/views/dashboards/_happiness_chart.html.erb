@@ -1,3 +1,20 @@
+<div class="search-hashtag-wrapper">
+  <h1 class="search-hashtag-name mt-4">#<%= params[:name].capitalize %></h1>
+  <% if @hashtag.present?%>
+    <% if Hashtag.find_by(name: @hashtag) %>
+      <% if Hashtag.find_by(name: @hashtag).user == current_user%>
+        <%= link_to "update score", hashtags_path(name: @hashtag, score: @score), class: "badge-green mt-3", method: :post  %>
+        <% else %>
+          <%= link_to "bookmark", hashtags_path(name: @hashtag, score: @score), class: "badge green mt-3", method: :post  %>
+      <% end %>
+    <% else %>
+      <%= link_to "bookmark", hashtags_path(name: @hashtag, score: @score), class: "badge-green mt-3", method: :post  %>
+    <% end %>
+  <% end %>
+</div>
 <div id="chartdiv" data-score="<%= @score %>">
 </div>
-<p>Your crowd was talking about your hashtag with 'happy words' such as <strong><%= @happy_words[0]%></strong>, <strong><%= @happy_words[1]%></strong> and <strong><%= @happy_words[2]%></strong>. But keep an eye on 'sad words' they used, like <strong><%= @sad_words[0] %></strong> and <strong><%= @sad_words[1] %></strong>!</p>
+<div class="row">
+  <div class="col-6">test</div>
+  <div class="col-6">test</div>
+</div>

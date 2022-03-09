@@ -7,7 +7,7 @@
 </div>
 <% else %>
   <h4 class= "mt-4">Welcome back, <%= current_user.name %>!</h4>
-  <p style="color: gray">Last searches</p>
+  <h5 style="color: gray">Last searches</h5>
 
     <ul class="last-searched-list">
       <% @my_hashtags.order(updated_at: :desc).each do |hashtag| %>

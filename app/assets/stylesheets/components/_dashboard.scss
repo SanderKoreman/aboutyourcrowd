@@ -68,3 +68,13 @@
 .align-left {
   text-align: left;
 }
+
+.search-hashtag-name {
+  color: $dark-blue;
+  margin-right: 12px;
+}
+
+.search-hashtag-wrapper {
+  display: flex;
+  align-items: center;
+}
