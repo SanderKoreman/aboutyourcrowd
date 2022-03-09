@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "uikit", to: "pages#uikit"
   get "test", to: "pages#test"
   get "/print", to: "printing#print"
+  get "/printshow", to: "printing#printshow"
 
   resources :users, only: [ :edit, :update ]
 

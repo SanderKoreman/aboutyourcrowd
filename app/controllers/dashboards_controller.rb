@@ -10,12 +10,13 @@ class DashboardsController < ApplicationController
   def my_dashboard
     @user = current_user
     @my_hashtags = @user.hashtags
-
     if params[:name] && params[:name] != ''
       @tweets = ''
       tweets = call_twitter(params[:name])
       unless tweets.class == String
         @score = retrieve_score(split_texts(tweets))
+        @sad_words = sad_words(split_texts(tweets))
+        @happy_words = happy_words(split_texts(tweets))
         @hashtag = params[:name]
       end
     end
@@ -102,6 +103,41 @@ class DashboardsController < ApplicationController
       sum = (sum / scores.count)
       return sum.round(1)
   end
+
+  def happy_words(words)
+
+      happy_words = []
+      words.each {|word|
+      if ('a'..'z').include?(word[0])
+        csv = "lib/assets/#{word[0]}.csv"
+
+        CSV.foreach(csv, headers: :first_row) do |row|
+          if (row["Happiness Score"].to_f >= 6) && row["Word"] == word
+            happy_words << word
+          end
+        end
+      end
+    }
+
+    return happy_words
+  end
+
+  def sad_words(words)
+      sad_words = []
+      words.each {|word|
+      if ('a'..'z').include?(word[0])
+        csv = "lib/assets/#{word[0]}.csv"
+
+        CSV.foreach(csv, :headers => :first_row) do |row|
+          if (row["Happiness Score"].to_f <= 3) && row["Word"] == word
+            sad_words << word
+          end
+        end
+      end
+    }
+    return sad_words
+  end
+
 end
 
 # def retrieve_score(words)
