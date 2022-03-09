@@ -25,13 +25,13 @@ const initHashtagIndex = () => {
         if (value === 0) {
           circle.setText('');
         } else {
-          circle.setText(value + '/10');
+          circle.setText(value);
         }
 
       }
     });
     bar.text.style.fontFamily = '"Roboto", Helvetica, sans-serif';
-    bar.text.style.fontSize = '1rem';
+    bar.text.style.fontSize = '1.5rem';
     // console.log(container.dataset.score);
     bar.animate((container.dataset.score) / 10);  // Number from 0.0 to 1.0
   })

@@ -56,11 +56,18 @@
 }
 
 .last-searched-card:last-child {
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 
 .last-searched-card div:last-child {
   margin-left: auto;
+}
+
+.last-searched-hashtag-name {
+  font-weight: 700;
+  color: $dark-blue;
+  cursor: pointer;
+  margin-right: 12px;
 }
 
 .last-searched-score {
@@ -72,18 +79,27 @@
 
 .last-searched-initial {
   cursor: default;
-  background-color: $green;
   font-size: 45px;
   font-weight: 700;
-  text-align: center;
   color: white;
+  p {
+    margin: 0;
+  }
+}
+
+.initial-wrapper {
+  background-color: $green;
+  border-radius: $border-radius-sm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 60px;
   width: 60px;
-  border-radius: $border-radius-sm;
   margin-right: 12px;
 }
 
 .last-searched-card a {
+  cursor: pointer;
   font-size: 20px;
   font-weight: 700;
   text-decoration: none;

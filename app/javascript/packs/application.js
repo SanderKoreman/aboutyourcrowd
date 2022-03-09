@@ -63,8 +63,8 @@ if(document.getElementById("chartdiv")) {
   var xAxis = chart.xAxes.push(
     am5xy.ValueAxis.new(root, {
       maxDeviation: 0,
-      min: 0,
-      max: 10,
+      min: 1.3,
+      max: 8.5,
       strictMinMax: true,
       renderer: axisRenderer
     })
@@ -160,7 +160,7 @@ if(document.getElementById("chartdiv")) {
     xAxis.makeDataItem({
       above: true,
       value: score,
-      endValue: 10
+      endValue: 8.5
     })
   );
 
