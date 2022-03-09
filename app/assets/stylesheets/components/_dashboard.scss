@@ -78,3 +78,31 @@
   display: flex;
   align-items: center;
 }
+
+.search-hashtag-happysad {
+  list-style-type: none;
+  margin-left: 0;
+  border-bottom: 1px solid $lighter-gray;
+  font-size: 18px;
+  color: $green;
+  padding: 6px;
+}
+
+.search-hashtag-happysad:last-child {
+  border-bottom: none;
+}
+
+.search-hashtag-list {
+  border: 1px solid $green;
+  border-radius: $border-radius-sm;
+  padding: 10px 14px;
+}
+
+.green-shadow {
+  box-shadow: $green 4px 4px 0 0, $green 4px 4px 0 1px;
+}
+
+.search-hashtag-list-header {
+  color: black;
+  font-weight: 500;
+}
