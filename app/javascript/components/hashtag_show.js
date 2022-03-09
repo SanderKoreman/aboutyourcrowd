@@ -1,14 +1,12 @@
-import { initHashtagIndex } from "./hashtag_index";
-
 var grabHashtag = () => {
-  // stuff we need to select, WE WANT TO MANIPULATE- tARGETING.
+  // stuff we need to select, 1 WE WANT TO MANIPULATE- tARGETING.
   var hashtags = document.querySelectorAll(".saved-hashtag-card")
   var container = document.querySelector(".output-info")
   var id = document.querySelector("#hashtagid")
   var newBtns = document.querySelectorAll(".last-searched-hashtag-name")
-  var my_hash
 
-  // ADD EVENT LISTENER -CLICK OR SCROLL, STAFF WE WANT TO EXECUTE
+
+  // 2 ADD EVENT LISTENER -CLICK OR SCROLL, STAFF WE WANT TO EXECUTE
   newBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       var my_hash = ""
@@ -20,7 +18,11 @@ var grabHashtag = () => {
       })
       // container.innerText = hash.hashtag
       // initHashtagIndex()
-      // 3EXECUTION OF WHAT I WANT TO DO
+      // 3 EXECUTION OF WHAT I WANT TO DO
+
+
+
+
       container.innerHTML = `
       <div class="row show-hashtag-row">
         <div class="show-hashtag-name mt-3" id="name"><h2>${my_hash.querySelector("#hashtagname").innerText}</h2></div>
@@ -32,8 +34,7 @@ var grabHashtag = () => {
         <div class="col-6 mt-3 show-card-right text-center">
           <p class="mb-0">At this moment the score is</p>
           <div class="p-0" id="score">?</div>
-          <a class="button-secondary link-dashboard-secondary" style="cursor: pointer;" href= "/">Find realtime sentiment</a>
-        </div>
+
       </div>
       `
     })
@@ -43,8 +44,16 @@ var grabHashtag = () => {
     hash.addEventListener('click', () => {
       // container.innerText = hash.hashtag
       // initHashtagIndex()
-      var happy_arr = hash.querySelector("#hashtaghappywords").innerText.replace(/\W/g, ' ')
-      var sad_arr = hash.querySelector("#hashtagsadwords").innerText.replace(/\W/g, ' ')
+      var sad_arr = []
+      var happy_arr = []
+      if (hash.querySelector("#hashtagsadwords").innerText) {
+        sad_arr = JSON.parse(hash.querySelector("#hashtagsadwords").innerText)
+      }
+
+      if (hash.querySelector("#hashtaghappywords").innerText) {
+        happy_arr = JSON.parse(hash.querySelector("#hashtaghappywords").innerText)
+      }
+
       container.innerHTML = `
       <div class="row show-hashtag-row">
         <div class="show-hashtag-name mt-3" id="name"><h2>${hash.querySelector("#hashtagname").innerText}</h2></div>
@@ -54,16 +63,25 @@ var grabHashtag = () => {
           <a class="button-secondary link-dashboard-secondary" href="/printshow.pdf?id=${id.innerText}">Download PDF</a>
         </div>
         <div class="col-6 mt-3 show-card-right text-center">
-        <div class="p-0" id="happywords">${happy_arr}</div>
-        <div class="p-0" id="sadwords">${sad_arr}</div>
+        <div class="p-0" id="hashtaghappywords">
+          <ul>
+            ${happy_arr.map(item => {
+              return `<li>${item}</li>`;
+            }).join('')}
+          </ul>
+        </div>
+          <div class="p-0" id="hashtagsadwords">
+            <ul>
+              ${sad_arr.map(item => {
+                return `<li>${item}</li>`;
+              }).join('')}
+            </ul>
+          </div>
         </div>
       </div>
       `
     })
   })
-
-
-
 }
 
 export default grabHashtag;
