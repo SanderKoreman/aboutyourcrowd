@@ -20,15 +20,15 @@
   <div class="col-5 mt-3">
   <h4 class="search-hashtag-list-header">Happiest words &#128515</h4>
     <div class="search-hashtag-list green-shadow">
-      <p class="search-hashtag-happysad">test</p>
-      <p class="search-hashtag-happysad">test</p>
-      <p class="search-hashtag-happysad">test</p>
+    <% @happy_words.each do |word| %>
+      <p class="search-hashtag-happysad"><%= word %></p>
+      <% end %>
     </div>
   <h4 class="search-hashtag-list-header mt-3">Saddest words &#128148</h4>
     <div class="search-hashtag-list green-shadow">
-      <p class="search-hashtag-happysad">test</p>
-      <p class="search-hashtag-happysad">test</p>
-      <p class="search-hashtag-happysad">test</p>
+    <% @sad_words.each do |word| %>
+      <p class="search-hashtag-happysad"><%= word %></p>
+      <% end %>
     </div>
   </div>
 </div>
