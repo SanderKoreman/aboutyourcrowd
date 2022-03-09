@@ -3,12 +3,12 @@
   <% if @hashtag.present?%>
     <% if Hashtag.find_by(name: @hashtag) %>
       <% if Hashtag.find_by(name: @hashtag).user == current_user%>
-        <%= link_to "update score", hashtags_path(name: @hashtag, score: @score), class: "badge-green mt-3", method: :post  %>
+        <%= link_to "update score", hashtags_path(name: @hashtag, score: @score, happywords:@happy_words, sadwords: @sad_words), class: "badge-green mt-3", method: :post  %>
         <% else %>
-          <%= link_to "bookmark", hashtags_path(name: @hashtag, score: @score), class: "badge green mt-3", method: :post  %>
+          <%= link_to "bookmark", hashtags_path(name: @hashtag, score: @score, happywords:@happy_words, sadwords: @sad_words), class: "badge green mt-3", method: :post  %>
       <% end %>
     <% else %>
-      <%= link_to "bookmark", hashtags_path(name: @hashtag, score: @score), class: "badge-green mt-3", method: :post  %>
+      <%= link_to "bookmark", hashtags_path(name: @hashtag, score: @score,  happywords:@happy_words, sadwords: @sad_words), class: "badge-green mt-3", method: :post  %>
     <% end %>
   <% end %>
 </div>
