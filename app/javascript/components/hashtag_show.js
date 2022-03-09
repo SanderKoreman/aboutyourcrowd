@@ -56,6 +56,7 @@ var grabHashtag = () => {
           <div class="p-0" id="score">?</div>
           <a class="button-secondary link-dashboard-secondary" style="cursor: pointer;" href= "/">Find realtime sentiment</a>
         </div>
+        <a href="/printshow.pdf" %>Save as PDF</a>
       </div>
       `
     })

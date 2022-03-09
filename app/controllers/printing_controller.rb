@@ -11,4 +11,15 @@ class PrintingController < ApplicationController
     end
   end
 
+  def printshow
+    @user = current_user
+    @hashtag = Hashtag.find([])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "showpage", template: "printing/printshow.html.erb", layout: "pdf.html.erb", encoding: "UTF-8"
+      end
+    end
+  end
+
 end
