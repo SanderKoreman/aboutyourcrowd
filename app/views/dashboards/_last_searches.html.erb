@@ -9,8 +9,8 @@
   <h4 class= "mt-4">Welcome back, <%= current_user.name %>!</h4>
   <p style="color: gray">Last searches</p>
 
-      <!--Wicked pdf---------------------------->
-      <%= link_to "Save as PDF", print_path(format: :pdf), class: "button-primary link-dashboard-primary" %>
+<!--Wicked pdf button to print---------------------------->
+  <%= link_to "Save as PDF", print_path(format: :pdf), class: "button-primary link-dashboard-primary" %>
 
   <ul class="last-searched-list">
     <% @my_hashtags.order(updated_at: :desc).each do |hashtag| %>
