@@ -43,6 +43,8 @@ var grabHashtag = () => {
     hash.addEventListener('click', () => {
       // container.innerText = hash.hashtag
       // initHashtagIndex()
+      var happy_arr = hash.querySelector("#hashtaghappywords").innerText.replace(/\W/g, ' ')
+      var sad_arr = hash.querySelector("#hashtagsadwords").innerText.replace(/\W/g, ' ')
       container.innerHTML = `
       <div class="row show-hashtag-row">
         <div class="show-hashtag-name mt-3" id="name"><h2>${hash.querySelector("#hashtagname").innerText}</h2></div>
@@ -52,11 +54,9 @@ var grabHashtag = () => {
           <a class="button-secondary link-dashboard-secondary" href="/printshow.pdf?id=${id.innerText}">Download PDF</a>
         </div>
         <div class="col-6 mt-3 show-card-right text-center">
-          <p class="mb-0">At this moment the score is</p>
-          <div class="p-0" id="score">?</div>
-          <a class="button-secondary link-dashboard-secondary" style="cursor: pointer;" href= "/">Find realtime sentiment</a>
+        <div class="p-0" id="happywords">${happy_arr}</div>
+        <div class="p-0" id="sadwords">${sad_arr}</div>
         </div>
-
       </div>
       `
     })
