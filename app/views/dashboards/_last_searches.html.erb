@@ -1,13 +1,13 @@
 
 <% if @my_hashtags.empty? %>
 <div class= "d-flex flex-column align-items-center">
-    <h4 class="mt-5">Welcome, <%= current_user.name %>!</h4>
-    <p>Don't wait any longer! About Your Crowd is ready to help you finding the mood on your hashtag.</p>
+    <h4 class="mt-5">Tap into what's happening to build what's next!</h4>
+    <p> About Your Crowd is finds the mood on Twitter hashtag.</p>
     <div class="search-image" style="width: 320px; height: 320px;"></div>
 </div>
 <% else %>
-  <h4 class= "mt-4">Welcome back, <%= current_user.name %>!</h4>
-  <h5 style="color: gray">Last searches</h5>
+
+  <h5 class = "mt-4" style="color: gray">Last searched bookmarks</h5>
 
     <ul class="last-searched-list">
       <% @my_hashtags.order(updated_at: :desc).each do |hashtag| %>
