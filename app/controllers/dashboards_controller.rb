@@ -124,7 +124,7 @@ class DashboardsController < ApplicationController
         csv = "lib/assets/#{word[0]}.csv"
 
         CSV.foreach(csv, :headers => :first_row) do |row|
-          if (row["Happiness Score"].to_f <= 3) && row["Word"] == word
+          if (row["Happiness Score"].to_f <= 4) && row["Word"] == word
             sad_words << word if sad_words.count <= 2
           end
         end
