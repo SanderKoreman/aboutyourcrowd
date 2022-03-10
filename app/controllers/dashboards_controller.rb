@@ -42,7 +42,7 @@ class DashboardsController < ApplicationController
 
   TEXTS = []
   def call_twitter(query)
-    url = "https://api.twitter.com/2/tweets/search/recent?&query=%23#{query}%20-is%3Aretweet%20%20lang%3Aen&max_results=10"
+    url = "https://api.twitter.com/2/tweets/search/recent?&query=%23#{query}%20-is%3Aretweet%20%20lang%3Aen&max_results=100"
     # get request
     response = URI.open(url,
       "Authorization" => "Bearer AAAAAAAAAAAAAAAAAAAAAMjvZgEAAAAAzaTwcexM%2FozUoUW4TZjTDl30cpU%3D7oZ6mAazRU6drDRdUPTLllgfeXxKwl9OXwXjWHdyRuxgK23idR").read
@@ -108,7 +108,7 @@ class DashboardsController < ApplicationController
 
         CSV.foreach(csv, headers: :first_row) do |row|
           if (row["Happiness Score"].to_f >= 7) && row["Word"] == word
-            happy_words << word
+            happy_words << word if happy_words.count <= 2
           end
         end
       end
@@ -125,7 +125,7 @@ class DashboardsController < ApplicationController
 
         CSV.foreach(csv, :headers => :first_row) do |row|
           if (row["Happiness Score"].to_f <= 3) && row["Word"] == word
-            sad_words << word
+            sad_words << word if sad_words.count <= 2
           end
         end
       end
