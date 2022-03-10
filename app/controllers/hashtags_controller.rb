@@ -9,7 +9,7 @@ class HashtagsController < ApplicationController
   def create
 
     if Hashtag.find_by(name: params[:name])
-      Hashtag.find_by(name: params[:name]).update(score: params[:score])
+      Hashtag.find_by(name: params[:name]).update(score: params[:score], happywords: params[:happywords], sadwords: params[:sadwords])
       redirect_to my_dashboard_path
       else
       # raise
