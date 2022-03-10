@@ -30,7 +30,7 @@ var grabHashtag = () => {
         <div class="col-6 mt-3">
           <div class="d-flex">
             <h4 class="search-hashtag-list-header me-3">Happiest words</h4>
-            <img src="https://res.cloudinary.com/djxbpnlad/image/upload/v1646927804/dislike_exleaa.svg" style="width: 32px; height: 32px;" alt="Happy icon">
+            <img src="https://res.cloudinary.com/djxbpnlad/image/upload/v1646927805/tick_amsjsi.svg" style="width: 32px; height: 32px;" alt="Happy icon">
           </div>
             <div class="search-hashtag-list green-shadow mb-4">
               <div class="p-0" id="hashtaghappywords">
@@ -113,7 +113,7 @@ var grabHashtag = () => {
         <div class="col-6 mt-3">
         <div class="d-flex">
           <h4 class="search-hashtag-list-header me-3">Happiest words</h4>
-          <img src="https://res.cloudinary.com/djxbpnlad/image/upload/v1646927804/dislike_exleaa.svg" style="width: 32px; height: 32px;" alt="Happy icon">
+          <img src="https://res.cloudinary.com/djxbpnlad/image/upload/v1646927805/tick_amsjsi.svg" style="width: 32px; height: 32px;" alt="Happy icon">
         </div>
           <div class="search-hashtag-list green-shadow mb-4">
             <div class="p-0" id="hashtaghappywords">
