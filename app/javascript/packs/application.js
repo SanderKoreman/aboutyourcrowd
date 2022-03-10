@@ -10,7 +10,6 @@ import "channels"
 import grabHashtag from "../components/hashtag_show";
 import { initHashtagIndex } from "../components/hashtag_index";
 
-
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
@@ -193,8 +192,9 @@ if(document.getElementById("chartdiv")) {
 
   // Make stuff animate on load
   chart.appear(1000, 9);
-  chart.svgContainer.autoResize = false;
-
+  if(chart.svgContainer) {
+    chart.svgContainer.autoResize = false;
+  }
 }
 
 
