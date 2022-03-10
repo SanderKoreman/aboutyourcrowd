@@ -1,0 +1,5 @@
+meta_product_name: "About Your Crowd"
+meta_title: "About Your Crowd - Find out what your crowd is talking about"
+meta_description: "About Your Crowd uses Twitter hashtags to help you analyze what users of your product, brand or company are talking about."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@aboutyourcrowd"   # required for Twitter Cards
