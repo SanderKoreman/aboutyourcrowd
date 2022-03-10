@@ -78,13 +78,13 @@
 
 .button-red {
   appearance: button;
-  background-color: rgb(202, 104, 104);
+  background-color: white;
   background-image: none;
-  border: none;
+  border: 1px solid $lighter-gray;
   border-radius: 4px;
-  box-shadow: $white 4px 4px 0 0,$white 4px 4px 0 1px;
+  box-shadow: $white 4px 4px 0 0,$lighter-gray 4px 4px 0 1px;
   box-sizing: border-box;
-  color: rgb(252, 205, 205);;
+  color: rgb(219, 111, 111);
   display: inline-block;
   font-size: 14px;
   font-weight: 700;
@@ -104,10 +104,11 @@
 
 .button-red:hover {
   text-decoration: none;
-  color: white;
+  color: rgb(77, 20, 20);
+  box-shadow: white 4px 4px 0 0,$light-gray 4px 4px 0 1px
 }
 
 .link-dashboard-red {
   appearance: none !important;
-  box-shadow: white 4px 4px 0 0,$green 4px 4px 0 1px !important;
+  box-shadow: white 4px 4px 0 0,$lighter-gray 4px 4px 0 1px !important;
 }
