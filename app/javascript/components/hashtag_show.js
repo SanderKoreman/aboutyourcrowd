@@ -96,8 +96,6 @@ var grabHashtag = () => {
             }).join('')}
             </div>
           </div>
-
-
       </div>
       `
     })
