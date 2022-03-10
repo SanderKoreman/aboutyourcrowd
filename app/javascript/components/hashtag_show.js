@@ -82,8 +82,8 @@ var grabHashtag = () => {
         // happy words ================
         var happycontent = ""
 
-        if(sad_arr.length > 0) {
-          sad_arr.map(item => {
+        if(happy_arr.length > 0) {
+          happy_arr.map(item => {
             happycontent += `<p class="search-hashtag-happysad">${item}</p>`;
           })
         }
