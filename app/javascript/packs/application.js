@@ -202,4 +202,3 @@ document.addEventListener('turbolinks:load', () => {
   initHashtagIndex();
   grabHashtag();
 });
-
