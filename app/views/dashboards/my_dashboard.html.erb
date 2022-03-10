@@ -9,7 +9,6 @@
       <div>
         <a href="/my-dashboard"><%= image_tag "logo5.png", class: "logo" %></a>
           <h6 class="mt-4 username">Logged in as <%= @user.name  %></h4>
-
         <%= render "dashboards/my_hashtags" %>
       </div>
       <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button-red link-dashboard-red" %>
