@@ -92,3 +92,16 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.pdf-h2 {
+  color: $dark-blue;
+  font-weight: 900;
+  font-size: 60px;
+}
+
+.pdf-hashtag-score {
+    font-size: 280px;
+    font-weight: 900;
+    color: $dark-blue;
+    text-shadow: 6px 6px white, 8px 8px $green;
+}
