@@ -28,8 +28,11 @@ var grabHashtag = () => {
           <a class="button-secondary link-dashboard-secondary" href="/pdf.pdf?id=${id.innerText}">Download PDF</a>
         </div>
         <div class="col-6 mt-3">
-          <h4 class="search-hashtag-list-header">Happiest words &#128515</h4>
-            <div class="search-hashtag-list green-shadow">
+          <div class="d-flex">
+            <h4 class="search-hashtag-list-header me-3">Happiest words</h4>
+            <img src="/assets/tick.svg" style="width: 32px; height: 32px;" alt="Happy icon">
+          </div>
+            <div class="search-hashtag-list green-shadow mb-4">
               <div class="p-0" id="hashtaghappywords">
 
               ${JSON.parse(my_hash.querySelector("#hashtaghappywords").innerText).map(item => {
@@ -38,7 +41,10 @@ var grabHashtag = () => {
               </div>
             </div>
 
-            <h4 class="search-hashtag-list-header mt-3">Saddest words &#128148</h4>
+            <div class="d-flex">
+            <h4 class="search-hashtag-list-header me-3">Saddest words</h4>
+            <img src="/assets/dislike.svg" style="width: 32px; height: 32px;" alt="Happy icon">
+          </div>
             <div class="search-hashtag-list green-shadow">
               <div class="p-0" id="hashtaghappywords">
 
@@ -105,14 +111,20 @@ var grabHashtag = () => {
           <a class="button-secondary link-dashboard-secondary" href="/printshow.pdf?id=${id.innerText}">Download PDF</a>
         </div>
         <div class="col-6 mt-3">
-          <h4 class="search-hashtag-list-header">Happiest words &#128515</h4>
-          <div class="search-hashtag-list green-shadow">
+        <div class="d-flex">
+          <h4 class="search-hashtag-list-header me-3">Happiest words</h4>
+          <img src="/assets/tick.svg" style="width: 32px; height: 32px;" alt="Happy icon">
+        </div>
+          <div class="search-hashtag-list green-shadow mb-4">
             <div class="p-0" id="hashtaghappywords">
 
             ${happycontent}
             </div>
           </div>
-          <h4 class="search-hashtag-list-header mt-3">Saddest words &#128148</h4>
+          <div class="d-flex">
+            <h4 class="search-hashtag-list-header me-3">Saddest words</h4>
+            <img src="/assets/dislike.svg" style="width: 32px; height: 32px;" alt="Happy icon">
+          </div>
           <div class="search-hashtag-list green-shadow">
             <div class="p-0" id="hashtaghappywords">
             ${sadcontent}
