@@ -43,7 +43,7 @@ var grabHashtag = () => {
 
             <div class="d-flex">
             <h4 class="search-hashtag-list-header me-3">Saddest words</h4>
-            <img src="/assets/dislike.svg" style="width: 32px; height: 32px;" alt="Happy icon">
+            <img src="/assets/dislike.svg" style="width: 32px; height: 32px;" alt="Sad icon">
           </div>
             <div class="search-hashtag-list green-shadow">
               <div class="p-0" id="hashtaghappywords">
@@ -123,7 +123,7 @@ var grabHashtag = () => {
           </div>
           <div class="d-flex">
             <h4 class="search-hashtag-list-header me-3">Saddest words</h4>
-            <img src="/assets/dislike.svg" style="width: 32px; height: 32px;" alt="Happy icon">
+            <img src="/assets/dislike.svg" style="width: 32px; height: 32px;" alt="Sad icon">
           </div>
           <div class="search-hashtag-list green-shadow">
             <div class="p-0" id="hashtaghappywords">
