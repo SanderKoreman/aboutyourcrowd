@@ -17,14 +17,13 @@
 </div>
 </div>
 
-<div class="row">
+<div class="row chart-gauge">
   <div class="col-7 mt-3">
     <div id="chartdiv" data-score="<%= @score %>"></div>
   </div>
   <div class="col-5 mt-3">
     <div class = "d-flex justify-content-between align-items-center">
       <h4 class="search-hashtag-list-header">Happiest words &#128515</h4>
-      <%= render "dashboards/info_modal" %>
     </div>
     <div class="search-hashtag-list green-shadow">
       <% @happy_words.each do |word| %>
@@ -33,7 +32,6 @@
     </div>
     <div class = "d-flex justify-content-between align-items-center">
       <h4 class="search-hashtag-list-header mt-3">Saddest words &#128148</h4>
-      <%= render "dashboards/info_modal" %>
     </div>
     <div class="search-hashtag-list green-shadow">
       <% @sad_words.each do |word| %>

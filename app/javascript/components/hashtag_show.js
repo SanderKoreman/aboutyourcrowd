@@ -56,6 +56,7 @@ var grabHashtag = () => {
     hash.addEventListener('click', () => {
       // container.innerText = hash.hashtag
       // initHashtagIndex()
+      var chartGauge = document.querySelector(".chart-gauge")
       var sad_arr = []
       var happy_arr = []
       if (hash.querySelector("#hashtagsadwords").innerText) {
@@ -66,7 +67,9 @@ var grabHashtag = () => {
         happy_arr = JSON.parse(hash.querySelector("#hashtaghappywords").innerText)
       }
 
-      console.log(sad_arr)
+      if(chartGauge) {
+        chartGauge.outerHTML = ''
+      }
       container.innerHTML = `
       <div class="row show-hashtag-row">
         <div class="show-hashtag-name mt-3" id="name"><h2>${hash.querySelector("#hashtagname").innerText}</h2></div>
