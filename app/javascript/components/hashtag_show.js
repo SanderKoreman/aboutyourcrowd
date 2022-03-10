@@ -31,7 +31,7 @@ var grabHashtag = () => {
           <h4 class="search-hashtag-list-header">Happiest words &#128515</h4>
             <div class="search-hashtag-list green-shadow">
               <div class="p-0" id="hashtaghappywords">
-              <p class="search-hashtag-happysad">
+
               ${JSON.parse(my_hash.querySelector("#hashtaghappywords").innerText).map(item => {
                 return `<p class="search-hashtag-happysad">${item}</p>`;
               }).join('')}
@@ -41,7 +41,7 @@ var grabHashtag = () => {
             <h4 class="search-hashtag-list-header mt-3">Saddest words &#128148</h4>
             <div class="search-hashtag-list green-shadow">
               <div class="p-0" id="hashtaghappywords">
-              <p class="search-hashtag-happysad">
+
               ${JSON.parse(my_hash.querySelector("#hashtagsadwords").innerText).map(item => {
                 return `<p class="search-hashtag-happysad">${item}</p>`;
               }).join('')}
@@ -66,7 +66,33 @@ var grabHashtag = () => {
       if (hash.querySelector("#hashtaghappywords").innerText) {
         happy_arr = JSON.parse(hash.querySelector("#hashtaghappywords").innerText)
       }
+      // sad words ================
+      var sadcontent = ""
 
+      if(sad_arr.length > 0) {
+        sad_arr.map(item => {
+          sadcontent += `<p class="search-hashtag-happysad">${item}</p>`;
+        })
+      }
+      console.log(sadcontent)
+      if(sadcontent === "") {
+        sadcontent = "--"
+      }
+
+        // happy words ================
+        var happycontent = ""
+
+        if(sad_arr.length > 0) {
+          sad_arr.map(item => {
+            happycontent += `<p class="search-hashtag-happysad">${item}</p>`;
+          })
+        }
+        console.log(happycontent)
+        if(happycontent === "") {
+          happycontent = "--"
+        }
+
+      //===========================
       if(chartGauge) {
         chartGauge.outerHTML = ''
       }
@@ -83,18 +109,13 @@ var grabHashtag = () => {
           <div class="search-hashtag-list green-shadow">
             <div class="p-0" id="hashtaghappywords">
 
-            ${happy_arr.map(item => {
-              return `<p class="search-hashtag-happysad">${item}</p>`;
-            }).join('')}
+            ${happycontent}
             </div>
           </div>
           <h4 class="search-hashtag-list-header mt-3">Saddest words &#128148</h4>
           <div class="search-hashtag-list green-shadow">
             <div class="p-0" id="hashtaghappywords">
-
-            ${sad_arr.map(item => {
-              return `<p class="search-hashtag-happysad">${item}</p>`;
-            }).join('')}
+            ${sadcontent}
             </div>
           </div>
       </div>
