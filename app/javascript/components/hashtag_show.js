@@ -86,10 +86,8 @@ var grabHashtag = () => {
             ${happy_arr.map(item => {
               return `<p class="search-hashtag-happysad">${item}</p>`;
             }).join('')}
-
             </div>
           </div>
-
           <h4 class="search-hashtag-list-header mt-3">Saddest words &#128148</h4>
           <div class="search-hashtag-list green-shadow">
             <div class="p-0" id="hashtaghappywords">

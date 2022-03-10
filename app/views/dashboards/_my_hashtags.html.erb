@@ -10,7 +10,7 @@
       <li style="cursor: pointer;" class="saved-hashtag-card d-flex justify-content-between">
         <span id="hashtagname"><%= "##{hashtag.name.capitalize}"%></span>
         <a data-confirm="Are you sure?" data-method="delete" href="hashtags/<%= hashtag.id %>">
-        <i class="fas fa-trash"></i>
+          <i class="fas fa-trash"></i>
         </a>
         <div id="hashtagdate" style="display: none;"><%= hashtag.updated_at %></div>
         <div id="hashtagscore" style="display: none;"><%= hashtag.score %></div>
