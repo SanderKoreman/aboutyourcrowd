@@ -28,3 +28,9 @@
 <p>Created by <a href="https://github.com/SanderKoreman">Sander Koreman</a> and <a href="https://github.com/EugyPastore">Eugenia Pastore</a> during the Le Wagon Web Development Bootcamp in Amsterdam.</p>
 
 <h2>Showcase</h2>
+
+![This is an image](https://i.ibb.co/wN0rX8V/Schermafbeelding-2022-03-18-om-15-26-20.png)
+
+![This is an image](https://i.ibb.co/DLxdLBm/Schermafbeelding-2022-03-18-om-15-26-24.png)
+
+![This is an image](https://i.ibb.co/2v7v1J8/Schermafbeelding-2022-03-18-om-15-26-26.png)
