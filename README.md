@@ -1,4 +1,5 @@
 <h1>About Your Crowd</h1>
+<h3>A platform that lets you find out what your audience thinks of your brand, company or product in just 3 steps!</h3>
 
 <h2>Description</h2>
 
