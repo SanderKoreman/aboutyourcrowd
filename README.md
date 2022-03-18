@@ -1,6 +1,27 @@
 <h1>About Your Crowd</h1>
+
 <h2>Description</h2>
-<p> App built on Ruby on Rails. </p>
+
+<p> So, you founded a company and it's doing well. Awesome, good job! But with great success comes great responsibility. Suddenly you have a name to keep, an image that you need to hold high. And for that, you need to know what your audience is talking about. </p>
+<p> About Your Crowd is the platform you need. It helps you analyzing the general mood of your audience and uses tweets to measure that. In just three steps you know how your product, company or brand is scoring among people that are talking about it on Twitter. You sign up, search for a hashtag and get a score. <p>
+  
+<p> Let's say for example that I'm Elon Musk (I wish) and I want to know how Tesla is scoring. I can search by the hashtag #Tesla and I get a score between 1.3 and 8.5. Why those numbers? More about that later. <p>
+  
+<p> 
+  
+<p> <b>About Your Crowd in short:</b> </p>
+<ul>
+  <li>Built on Ruby on Rails</li>
+  <li>2 pages: Landing page, dashboard</li>
+  <li>Forms: login, sign up</li>
+  <li>MVC Architecture</li>
+  <li>JavaScript charts</li>
+  <li>Search Bar</li>
+  <li>UX/UI design</li>
+  <li>Uniform colors and fonts</li>
+  <li>Gems: Devise, Simple Form</li>
+  <li>Call-to-action Buttons</li>
+</ul>
   
 <h2>Creators</h2>
 <p>Created by <a href="https://github.com/SanderKoreman">Sander Koreman</a> and <a href="https://github.com/EugyPastore">Eugenia Pastore</a> during the Le Wagon Web Development Bootcamp in Amsterdam.</p>
