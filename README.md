@@ -20,7 +20,7 @@
   <li>Search Bar</li>
   <li>UX/UI design</li>
   <li>Uniform colors and fonts</li>
-  <li>Gems: Devise, Simple Form</li>
+  <li>Gems: Devise, Simple Form, Wicked PDF</li>
   <li>API: Twitter</li>
 </ul>
   
