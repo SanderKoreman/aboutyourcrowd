@@ -4,7 +4,7 @@
 <h2>Description</h2>
 
 <p> So, you founded a company and it's doing well. Awesome, good job! But with great success comes great responsibility. Suddenly you have a name to keep, an image that you need to hold high. And for that, you need to know what your audience is talking about. </p>
-<p> About Your Crowd is the platform you need. It helps you analyzing the general mood of your audience and uses tweets to measure that. In just three steps you know how your product, company or brand is scoring among people that are talking about it on Twitter. You sign up, search for a hashtag and get a score. <p>
+<p> About Your Crowd is the platform you need. It helps you to analyze the general mood of your audience and uses tweets to measure that. In just three steps you know how your product, company or brand is scoring among people that are talking about it on Twitter. You sign up, search for a hashtag and get a score. <p>
   
 <p> Let's say for example that I'm Elon Musk (I wish) and I want to know how Tesla is scoring. I can search by the hashtag #Tesla and I get a score between 1.3 and 8.5. Why those numbers? More about that later. <p>
   
