@@ -21,6 +21,7 @@
   <li>UX/UI design</li>
   <li>Uniform colors and fonts</li>
   <li>Gems: Devise, Simple Form</li>
+  <li>API: Twitter</li>
   <li>Call-to-action Buttons</li>
 </ul>
   
