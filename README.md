@@ -10,7 +10,7 @@
   
 <h2>Under the hood</h2>
 
-<p>So, how does About Your Crowd work behind the scenes? We use the official Twitter API to scrape tweets with the searched hashtag included. Every word in those tweets get a so called 'Happiness Score' from the word list of Hedonometer.org, a platform that monitors the average Happiness Score on Twitter. The lowest scoring word has a 1.3 connected to it ('terrorist'), the highest scoring word an 8.5 ('laughter'). We store every score and calculate an average, that's displayed on screen. Along with the score comes a short list of the 'happiest' and 'saddest' words.<p>
+<p>How does About Your Crowd work behind the scenes? We use the official Twitter API to scrape tweets with the searched hashtag included. Every word in those tweets get a so called 'Happiness Score' from the word list of Hedonometer.org, a platform that monitors the average Happiness Score on Twitter. The lowest scoring word has a 1.3 connected to it ('terrorist'), the highest scoring word an 8.5 ('laughter'). We store every score and calculate an average, that's displayed on screen. Along with the score comes a short list of the 'happiest' and 'saddest' words.<p>
   
 <p> <b>About Your Crowd in short:</b> </p>
 <ul>
