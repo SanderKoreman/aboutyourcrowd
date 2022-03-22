@@ -7,7 +7,7 @@
         <%= link_to "update score", hashtags_path(name: @hashtag, score: @score, happywords:@happy_words, sadwords: @sad_words), class: "badge-green mt-3", method: :post  %>
         <% else %>
 
-          <%= link_to "bookmark", hashtags_path(name: @hashtag, score: @score, happywords:@happy_words, sadwords: @sad_words), class: "badge green mt-3", method: :post  %>
+          <%= link_to "bookmark", hashtags_path(name: @hashtag, score: @score, happywords:@happy_words, sadwords: @sad_words), class: "badge-green mt-3", method: :post  %>
       <% end %>
     <% else %>
 
@@ -18,10 +18,10 @@
 </div>
 
 <div class="row chart-gauge">
-  <div class="col-7 mt-3">
+  <div class="col-sm-12 col-md-7 mt-3">
     <div id="chartdiv" data-score="<%= @score %>"></div>
   </div>
-  <div class="col-5 mt-3">
+  <div class="col-sm-12 col-md-5 mt-3">
     <div class = "d-flex">
       <h4 class="search-hashtag-list-header me-3">Happiest words</h4>
       <%= image_tag("tick.svg", size: "32x32", alt: "Edit Entry") %>

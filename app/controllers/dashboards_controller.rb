@@ -17,7 +17,6 @@ class DashboardsController < ApplicationController
         @score = retrieve_score(split_texts(tweets))
         @sad_words = sad_words(split_texts(tweets)).uniq
         @happy_words = happy_words(split_texts(tweets)).uniq
-
         @hashtag = params[:name]
       end
     end

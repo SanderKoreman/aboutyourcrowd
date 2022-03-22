@@ -1,19 +1,30 @@
-<div class="container landing mt-4">
-  <div class="landing-text">
-    <h1 class="header-landing">Get to <span class="landing-word">know</span><br>your crowd</h1>
-    <h6 class="mt-4"><span class="yellow-word">About Your Crowd</span> lets you find out what your audience<br>thinks of your brand, company or product in just <span class="landing-word">3</span> steps!</h6>
-    <div class="buttons-landing mt-4">
-    <% if user_signed_in? %>
-      <%= link_to "Dashboard", my_dashboard_path, class: "button-primary link" %>
-    <% else %>
-      <%#= link_to "Login", new_user_session_path, class: "button-primary link" %>
-      <%#= link_to "Sign up", new_user_registration_path, class: "button-secondary link" %>
-      <%= render 'pages/loginsignup' %>
-
-    <% end %>
-    </div>
-  </div>
-</div>
+<!--vertically center content-->
+<div class="d-flex align-items-center" style="min-height: 100vh">
+<div class="container" >
+    <div class="row gy-5">
+      <div class="col-sm-12 col-lg-6 justify-content-center">
+        <img src="assets/landing.png" class="img-fluid d-block mx-auto" style="max-height: 85vh" alt="Landing image">
+      </div>
+      <div class="col-sm-12 col-lg-6 align-self-center">
+        <div class="landing-text">
+          <h1 class="header-landing">Get to <span class="landing-word">know</span><br>
+            your crowd</h1>
+          <h6 class="mt-4"><span class="yellow-word">About Your Crowd</span> lets you find out what your audience<br>
+            thinks of your brand, company or product in just <span class="landing-word">3</span> steps!</h6>
+          <div class="buttons-landing mt-4">
+            <% if user_signed_in? %>
+              <%= link_to "Dashboard", my_dashboard_path, class: "button-primary link" %>
+            <% else %>
+              <%#= link_to "Login", new_user_session_path, class: "button-primary link" %>
+              <%#= link_to "Sign up", new_user_registration_path, class: "button-secondary link" %>
+              <%= render 'pages/loginsignup' %>
+            <% end %>
+          </div>
+        </div>
+      </div><!--col-md-4-->
+    </div> <!--row-->
+</div><!--container-->
+</div><!--flex-->
 
 <!--BOOTSTRAP JAVASCRIPT for modals to pop out-->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

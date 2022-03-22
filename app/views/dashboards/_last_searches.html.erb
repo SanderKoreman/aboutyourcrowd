@@ -1,14 +1,11 @@
-
 <% if @my_hashtags.empty? %>
-<div class= "d-flex flex-column align-items-center">
-    <h4 class="mt-5">Tap into what's happening to build what's next!</h4>
-    <p> About Your Crowd is finds the mood on Twitter hashtag.</p>
-    <div class="search-image" style="width: 320px; height: 320px;"></div>
-</div>
+  <div class= "d-flex flex-column align-items-center">
+      <h4 class="mt-5">Tap into what's happening to build what's next!</h4>
+      <p> About Your Crowd finds the mood on Twitter hashtag.</p>
+      <div class="search-image" style="width: 320px; height: 320px;"></div>
+  </div>
 <% else %>
-
   <h5 class = "mt-4" style="color: gray">Last searched bookmarks</h5>
-
     <ul class="last-searched-list">
       <% @my_hashtags.order(updated_at: :desc).each do |hashtag| %>
         <li class="last-searched-card">
@@ -17,8 +14,7 @@
           <p class="last-searched-score">last searched on<%= hashtag.updated_at.strftime("%e %B %Y at %H:%M")%></p>
           <div id="hashtaghappywords" style="display: none;"><%= hashtag.happywords %></div>
           <div id="hashtagsadwords" style="display: none;"><%= hashtag.sadwords %></div>
-
-          <div class="chart-container" data-score = "<%= hashtag.score %>"></div>
+          <div class="chart-container" style="height: initial" data-score = "<%= hashtag.score %>"></div>
         </li>
       <% end %>
     </ul>

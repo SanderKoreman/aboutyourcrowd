@@ -1,34 +1,20 @@
-.dashboard {
+.dashboard-border {
   background: #ffffff;
   box-shadow: $light-blue 10px 10px 0 0,$green 10px 10px 0 2px;
-  box-sizing: border-box;
+  // box-sizing: border-box;
   border-radius: $border-radius-dashboard;
-  margin: 12px auto;
-  height: 100%;
-  overflow: hidden;
+  // margin: 12px auto;
+  // height: 100%;
+  // overflow: hidden;
 }
 
-.landing {
-  background-image: url("landing.png");
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  height: 85vh;
-}
-
-.col-9 {
-  padding: 30px;
+.bg-dashboard {
   border-left: 1px solid $lighter-gray;
   background-color: rgb(252, 252, 252);
   border-top-right-radius: $border-radius-dashboard;
   border-bottom-right-radius: $border-radius-dashboard;
   // height: 100%;
   // overflow: hidden;
-}
-
-.col-3 {
-  padding: 30px;
-  display: flex;
-  flex-direction: column
 }
 
 .hashtag {
