@@ -1,12 +1,34 @@
 <div class="container">
   <%= image_tag image_url('logo5.png'), class: "pdf-image center" %>
-  <h1 class="pdf-h1">Hashtag report</h1>
+  <h1 class="pdf-h2">Report on #<%= @hashtag.name.capitalize %></h1>
   <h3 class="pdf-h3">Printed on <%= Time.now.strftime("%e %B %Y (%H:%M)") %> by <%= current_user.name %></h3>
-  <h1 class="pdf-h2">#<%= @hashtag.name.capitalize %></h1>
-  <div class="pdf-hashtag-wrapper">
-    <h2 class="pdf-hashtag-score"><%= @hashtag.score %></h2>
-    <% @hashtag.happywords.each do |word| %>
-      <p><%= word %></p>
-    <% end %>
-  </div>
+  <table class="grid-container">
+    <tr>
+      <th>Score</th>
+      <th>Happy words</th>
+      <th>Sad words</th>
+    </tr>
+    <tr>
+      <td><span class="pdf-hashtag-score"><%= @hashtag.score %></span></td>
+      <td>
+        <ul>
+          <% @hashtag.happywords.each do |word| %>
+            <li>
+              <p><%= word %></p>
+            </li>
+          <% end %>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <% @hashtag.sadwords.each do |word| %>
+            <li>
+              <p><%= word %></p>
+            </li>
+          <% end %>
+        </ul>
+      </td>
+    </tr>
+  </table>
 </div>
+<!--container-->
