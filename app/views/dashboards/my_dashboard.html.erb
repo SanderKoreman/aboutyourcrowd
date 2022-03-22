@@ -1,38 +1,39 @@
-<div class="container dashboard my-4">
-  <div class="row">
-    <div class="col-3 d-flex column justify-content-between">
-<!--Dashboard LEFT Side Username and my hashtags ------>
-<!--routes custom controller action-view---------------------------->
-      <div>
-        <a href="/my-dashboard"><%= image_tag "logo5.png", class: "logo" %></a>
+<div class="d-flex align-items-center" style="min-height: 100vh">
+  <div class="container dashboard-border">
+    <div class="row">
+      <!--Dashboard LEFT Side ------>
+      <div class="col-12 col-lg-3 p-4 d-flex flex-column justify-content-between">
+        <div>
+          <a href="/my-dashboard"><%= image_tag "logo5.png", class: "logo" %></a>
           <h6 class="mt-4 username">Welcome, <%= @user.name  %>!</h6>
-        <%= render "dashboards/my_hashtags" %>
+          <%= render "dashboards/my_hashtags" %>
+        </div>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button-red link-dashboard-red" %>
       </div>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button-red link-dashboard-red" %>
-    </div>
-<!--Dashboard RIGHT Side---------------------------->
-    <div class="col-9">
-    <!--Prawn---------------------------->
-      <%# <%= link_to "PDF file", pdf_path(format: "pdf") %>
-          <%#= render "dashboards/info_field" %>
-          <%= render "dashboards/search_hashtag" %>
-<!--Happiness score and Chart---------------------------->
-       <div class="output-info">
-            <% if params[:name] == "" %>
-              <%= render "dashboards/not_found" %>
-            <% elsif params[:tweets] == "false" %>
-              <%= render "dashboards/not_found" %>
-            <% elsif @score.present? %>
-                <% if @score.nan? %>
-                  <%= render "dashboards/no_updates" %>
-                  <% else %>
-                  <%= render "dashboards/happiness_chart" %>
-                <% end  %>
+<!--Dashboard RIGHT Side ------>
+      <div class="col-12 col-lg-9 bg-dashboard p-4">
+        <!--Prawn pdf---------------------------->
+        <%# <%= link_to "PDF file", pdf_path(format: "pdf") %>
+        <%#= render "dashboards/info_field" %>
+        <%= render "dashboards/search_hashtag" %>
+<!--SCORE DATA---------------------------->
+        <div class="output-info">
+          <% if params[:name] == "" %>
+            <%= render "dashboards/not_found" %>
+          <% elsif params[:tweets] == "false" %>
+            <%= render "dashboards/not_found" %>
+          <% elsif @score.present? %>
+            <% if @score.nan? %>
+              <%= render "dashboards/no_updates" %>
             <% else %>
-              <%= render "dashboards/last_searches" %>
-            <% end %>
-          </div>
-<!---Save bookmark and Update score ---------->
+              <%= render "dashboards/happiness_chart" %>
+            <% end  %>
+          <% else %>
+            <%= render "dashboards/last_searches" %>
+          <% end %>
+        </div>
+        <!---Save bookmark and Update score ---------->
+      </div>
     </div>
   </div>
-</div>
+  </div><!--d-flex-->

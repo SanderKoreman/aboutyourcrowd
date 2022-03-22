@@ -7,6 +7,7 @@ var grabHashtag = () => {
   var my_hash
 
   // ADD EVENT LISTENER -CLICK OR SCROLL, STAFF WE WANT TO EXECUTE
+  //INDEX PAGE
   newBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       var my_hash = ""
@@ -22,12 +23,12 @@ var grabHashtag = () => {
       container.innerHTML = `
       <div class="row show-hashtag-row">
         <div class="show-hashtag-name mt-3" id="name"><h2>${my_hash.querySelector("#hashtagname").innerText}</h2></div>
-        <div class="col-6 mt-3 show-card-left text-center">
+        <div class="col-md-12 col-lg-6 mt-3 show-card-left text-center">
           <div class="p-0" id="date">On ${my_hash.querySelector("#hashtagdate").innerText} the score was</div>
           <div class="p-0" id="score">${my_hash.querySelector("#hashtagscore").innerText}</div>
           <a class="button-secondary link-dashboard-secondary" href="/pdf.pdf?id=${id.innerText}">Download PDF</a>
         </div>
-        <div class="col-6 mt-3">
+        <div class="col-md-12 col-lg-6 mt-3">
           <div class="d-flex">
             <h4 class="search-hashtag-list-header me-3">Happiest words</h4>
             <img src="/assets/tick.svg" style="width: 32px; height: 32px;" alt="Happy icon">
@@ -43,7 +44,7 @@ var grabHashtag = () => {
 
             <div class="d-flex">
             <h4 class="search-hashtag-list-header me-3">Saddest words</h4>
-            <img src="/assets/dislike.svg" style="width: 32px; height: 32px;" alt="Happy icon">
+            <img src="/assets/dislike.svg" style="width: 32px; height: 32px;" alt="Sad icon">
           </div>
             <div class="search-hashtag-list green-shadow">
               <div class="p-0" id="hashtaghappywords">
@@ -58,6 +59,7 @@ var grabHashtag = () => {
     })
   })
 
+   //MY HASHTAGS LEFT SIDE OF DASHBOARD
   hashtags.forEach((hash) => {
     hash.addEventListener('click', () => {
       // container.innerText = hash.hashtag
@@ -105,12 +107,12 @@ var grabHashtag = () => {
       container.innerHTML = `
       <div class="row show-hashtag-row">
         <div class="show-hashtag-name mt-3" id="name"><h2>${hash.querySelector("#hashtagname").innerText}</h2></div>
-        <div class="col-6 mt-3 show-card-left text-center">
+        <div class="col-md-12 col-lg-6 mt-3 show-card-left text-center">
           <div class="p-0" id="date">On ${hash.querySelector("#hashtagdate").innerText} the score was</div>
           <div class="p-0" id="score">${hash.querySelector("#hashtagscore").innerText}</div>
           <a class="button-secondary link-dashboard-secondary" href="/printshow.pdf?id=${id.innerText}">Download PDF</a>
         </div>
-        <div class="col-6 mt-3">
+        <div class="col-md-12 col-lg-6 mt-3">
         <div class="d-flex">
           <h4 class="search-hashtag-list-header me-3">Happiest words</h4>
           <img src="/assets/tick.svg" style="width: 32px; height: 32px;" alt="Happy icon">
@@ -123,7 +125,7 @@ var grabHashtag = () => {
           </div>
           <div class="d-flex">
             <h4 class="search-hashtag-list-header me-3">Saddest words</h4>
-            <img src="/assets/dislike.svg" style="width: 32px; height: 32px;" alt="Happy icon">
+            <img src="/assets/dislike.svg" style="width: 32px; height: 32px;" alt="Sad icon">
           </div>
           <div class="search-hashtag-list green-shadow">
             <div class="p-0" id="hashtaghappywords">

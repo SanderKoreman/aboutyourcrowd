@@ -13,7 +13,8 @@ const initHashtagIndex = () => {
       easing: 'easeInOut',
       duration: 1400,
       text: {
-        autoStyleContainer: false
+        autoStyleContainer: false,
+
       },
       from: { color: '#8BBEB2', width: 1 },
       to: { color: '#8BBEB2', width: 6 },
