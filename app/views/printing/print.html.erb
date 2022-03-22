@@ -1,16 +1,41 @@
 <div class="container">
   <%= image_tag image_url('logo5.png'), class: "pdf-image center" %>
-  <h1 class="pdf-h1">Hashtag report</h1>
+  <h1 class="pdf-h1">Hashtags report</h1>
   <h3 class="pdf-h3">Printed on <%= Time.now.strftime("%e %B %Y (%H:%M)") %> by <%= current_user.name %></h3>
-
-    <ul class="pdf-last-searched-list">
-      <% @my_hashtags.order(updated_at: :desc).each do |hashtag| %>
-        <li class="pdf-last-searched-card">
-          <p class="pdf-last-searched-initial"><%= hashtag.name[0].capitalize %></p>
-          <p class="pdf-last-searched-hashtag-name"><%= "##{hashtag.name.capitalize}" %></p>
-          <p class="pdf-last-searched-date">last searched on<%= hashtag.updated_at.strftime("%e %B %Y at %H:%M")%></p>
+  <table class="grid-container">
+    <tr>
+      <th>Hashtag</th>
+      <th>Score</th>
+      <th>Happy words</th>
+      <th>Sad words</th>
+      <th>Date</th>
+    </tr>
+    <% @my_hashtags.order(updated_at: :desc).each do |hashtag| %>
+      <tr>
+        <td>
+          <p>#<%= hashtag.name.capitalize %></p>
+        </td>
+        <td>
           <p class="pdf-last-searched-score"><%= hashtag.score %></p>
-        </li>
-      <% end %>
-    </ul>
+        </td>
+        <td>
+          <% hashtag.happywords.each do |word| %>
+            <li>
+              <%= word %>
+            </li>
+          <% end %>
+        </td>
+        <td>
+          <% hashtag.sadwords.each do |word| %>
+            <li>
+              <%= word %>
+            </li>
+          <% end %>
+        </td>
+        <td>
+          <p><%= hashtag.updated_at.strftime("%e %B %Y at %H:%M")%></p>
+        </td>
+      </tr>
+    <% end %>
+  </table>
 </div>
