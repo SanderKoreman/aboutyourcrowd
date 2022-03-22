@@ -10,11 +10,14 @@
             <h2>Log in</h2>
             <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                       <div class="form-inputs">
+                      <%= f.hint 'Use account admin@demo.com and password demo12 to continue', class:"alert-warning px-5 mb-4 mt-4"%>
                         <%= f.input :email,
+                                    placeholder: 'admin@demo.com',
                                     required: false,
                                     autofocus: true,
                                     input_html: { autocomplete: "email" } %>
                         <%= f.input :password,
+                                    placeholder: 'demo12',
                                     required: false,
                                     input_html: { autocomplete: "current-password" } %>
                         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
@@ -44,6 +47,7 @@
           <div class="col-10 p-5 align-left">
             <h2>Sign up</h2>
                   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                  <%= f.hint 'Use account admin@demo.com and password demo12 to continue', class:"alert-warning px-5 mb-4 mt-4"%>
                     <%= f.error_notification %>
 
                     <div class="form-inputs">
