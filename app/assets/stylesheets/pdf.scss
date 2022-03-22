@@ -68,12 +68,12 @@
 .pdf-last-searched-score {
   display: inline-block;
   background-color: $green;
-  font-size: 55px;
+  font-size: 40px;
   font-weight: 900;
   text-align: center;
   color: white;
-  height: 60px;
-  width: 85px;
+
+  padding: 10px 15px;
   border-radius: $border-radius-sm;
 }
 
@@ -108,5 +108,13 @@
 .grid-container {
   text-align: left;
   margin-top: 40px;
-  width: 80%;
+  width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+tr {
+  border-bottom: 1pt solid $lighter-gray;
 }

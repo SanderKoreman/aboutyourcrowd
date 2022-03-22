@@ -11,22 +11,18 @@
     <tr>
       <td><span class="pdf-hashtag-score"><%= @hashtag.score %></span></td>
       <td>
-        <ul>
-          <% @hashtag.happywords.each do |word| %>
-            <li>
-              <p><%= word %></p>
-            </li>
-          <% end %>
-        </ul>
+        <% @hashtag.happywords.each do |word| %>
+          <li>
+            <%= word %>
+          </li>
+        <% end %>
       </td>
       <td>
-        <ul>
-          <% @hashtag.sadwords.each do |word| %>
-            <li>
-              <p><%= word %></p>
-            </li>
-          <% end %>
-        </ul>
+        <% @hashtag.sadwords.each do |word| %>
+          <li>
+            <%= word %>
+          </li>
+        <% end %>
       </td>
     </tr>
   </table>
